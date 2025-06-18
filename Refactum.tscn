@@ -1,13 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://du3re5hwylfon"]
 
-[ext_resource type="Texture2D" uid="uid://coxoqlhk641su" path="res://icon.svg" id="1_ibc8c"]
+[ext_resource type="PackedScene" uid="uid://3t3a2n1yu8yb" path="res://Background.tscn" id="2_1xlrf"]
 [ext_resource type="Script" path="res://Camera.gd" id="2_2p0h6"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(588, 305)
-texture = ExtResource("1_ibc8c")
-
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 323)
 script = ExtResource("2_2p0h6")
+
+[node name="Node2D" parent="." instance=ExtResource("2_1xlrf")]

@@ -15,6 +15,12 @@ run/main_scene="res://Refactum.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=2560
+window/size/viewport_height=1600
+window/size/mode=2
+
 [input]
 
 "Camera Up"={
