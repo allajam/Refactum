@@ -43,4 +43,6 @@ func _zoom_camera(amount: float) -> void:
 	new_zoom.y = clamp(new_zoom.y, min_zoom, max_zoom)
 	zoom = new_zoom
 	
+	
+
 
