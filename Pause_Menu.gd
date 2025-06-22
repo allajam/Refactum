@@ -10,9 +10,15 @@ func _ready():
 
 func show_menu():
 	visible = true
+	get_tree().paused = true
+	set_process_input(true)
+	
 
 func hide_menu():
 	visible = false
+	get_tree().paused = false
+	set_process_input(false)
+	
 
 func _on_resume_pressed():
 	hide_menu()
