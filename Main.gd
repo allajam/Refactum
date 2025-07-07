@@ -8,3 +8,6 @@ func _input(event):
 			pause_menu.hide_menu()
 		else:
 			pause_menu.show_menu()
+	if event.is_action_pressed("leftclick"):
+		AudioManager.play_click()
+		global_gold.money += 10

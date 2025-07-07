@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlh3fs1q8wuxf"]
+
+[ext_resource type="Texture2D" uid="uid://d4kyvhdi3vegf" path="res://Assets/Coins/MonedaD.png" id="1_7k0sv"]
+[ext_resource type="Script" path="res://Money'.gd" id="1_ku4uv"]
+
+[sub_resource type="GDScript" id="GDScript_au5go"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_ku4uv")
+
+[node name="MonedaD" type="Sprite2D" parent="."]
+position = Vector2(34, 39)
+scale = Vector2(3.3125, 3.5)
+texture = ExtResource("1_7k0sv")
+
+[node name="Label =" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.028
+anchor_right = 0.043
+anchor_bottom = 0.044
+offset_left = -0.68
+offset_top = 1.0
+offset_right = -10.08
+offset_bottom = -0.400009
+theme_override_font_sizes/font_size = 50
+text = "="
+
+[node name="Gold_Amount" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.046
+anchor_top = 0.007
+anchor_right = 0.345
+anchor_bottom = 0.044
+offset_left = 0.23999
+offset_top = -0.200001
+offset_right = -1.20007
+offset_bottom = -0.400009
+theme_override_font_sizes/font_size = 40
+script = SubResource("GDScript_au5go")

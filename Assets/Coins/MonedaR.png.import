@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca303twi28otq"
-path="res://.godot/imported/Sabbia.png-ff1971f3bf5dd515c1b9d1a692c19e00.ctex"
+uid="uid://c2oputesuv6eh"
+path="res://.godot/imported/MonedaR.png-f6236143149fd0543d9633c437b17fcb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sabbia.png"
-dest_files=["res://.godot/imported/Sabbia.png-ff1971f3bf5dd515c1b9d1a692c19e00.ctex"]
+source_file="res://Assets/Coins/MonedaR.png"
+dest_files=["res://.godot/imported/MonedaR.png-f6236143149fd0543d9633c437b17fcb.ctex"]
 
 [params]
 

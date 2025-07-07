@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://du3re5hwylfon"]
+[gd_scene load_steps=6 format=3 uid="uid://du3re5hwylfon"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_ew5a1"]
 [ext_resource type="PackedScene" uid="uid://3t3a2n1yu8yb" path="res://Background.tscn" id="2_1xlrf"]
 [ext_resource type="Script" path="res://Camera.gd" id="2_2p0h6"]
 [ext_resource type="PackedScene" uid="uid://djicghqaqc65b" path="res://Pause_Menu.tscn" id="4_mtxuk"]
+[ext_resource type="PackedScene" uid="uid://dlh3fs1q8wuxf" path="res://Money'.tscn" id="5_cqr7h"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ew5a1")
@@ -15,3 +16,6 @@ script = ExtResource("2_2p0h6")
 [node name="Node2D" parent="." instance=ExtResource("2_1xlrf")]
 
 [node name="PauseMenu" parent="." instance=ExtResource("4_mtxuk")]
+visible = false
+
+[node name="CanvasLayer" parent="." instance=ExtResource("5_cqr7h")]

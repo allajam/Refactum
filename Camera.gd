@@ -4,8 +4,8 @@ extends Camera2D
 @export var acceleration: float = 1500.0
 @export var friction: float = 800.0
 @export var zoom_speed: float = 0.1
-@export var min_zoom: float = 0.5
-@export var max_zoom: float = 3.0
+@export var min_zoom: float = 1
+@export var max_zoom: float = 2.0
 
 var velocity: Vector2 = Vector2.ZERO
 
