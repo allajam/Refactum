@@ -1,13 +1,18 @@
 extends Camera2D
 
-@export var max_speed: float = 350.0
-@export var acceleration: float = 1500.0
-@export var friction: float = 800.0
+@export var max_speed: float = 400.0
+@export var acceleration: float = 2000.0
+@export var friction: float = 1500.0
 @export var zoom_speed: float = 0.1
 @export var min_zoom: float = 1
 @export var max_zoom: float = 2.0
 
+
 var velocity: Vector2 = Vector2.ZERO
+
+func _ready():
+	zoom = Vector2(1.5, 1.5)
+
 
 func _process(delta: float) -> void:
 	var input_vector := Vector2.ZERO
