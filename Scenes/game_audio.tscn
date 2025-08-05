@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://e4r7nm1ogl1i"]
+
+[ext_resource type="Script" path="res://Scripts/game_audio.gd" id="1_uscxh"]
+[ext_resource type="AudioStream" uid="uid://ksg44a0dar7y" path="res://Assets/Sounds/button_fx_mid_002_01_cc0_avr.wav" id="2_c4ees"]
+[ext_resource type="AudioStream" uid="uid://db0xyim0r20xa" path="res://Assets/Sounds/Cabin.mp3" id="3_kak7t"]
+[ext_resource type="Texture2D" uid="uid://coxoqlhk641su" path="res://icon.svg" id="4_djten"]
+
+[node name="Game Audio" type="Node2D"]
+script = ExtResource("1_uscxh")
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_c4ees")
+volume_db = -19.419
+pitch_scale = 1.35
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_kak7t")
+volume_db = -15.579
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(821, 398)
+texture = ExtResource("4_djten")

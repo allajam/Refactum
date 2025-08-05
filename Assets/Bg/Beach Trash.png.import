@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca303twi28otq"
-path="res://.godot/imported/Sabbia.png-2dd4481015c8a973cefeb9a5846cdce2.ctex"
+uid="uid://cjdl02j1ro43a"
+path="res://.godot/imported/Beach Trash.png-725df30b4cbba04a66433446ee1b1083.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sabbia.png"
-dest_files=["res://.godot/imported/Sabbia.png-2dd4481015c8a973cefeb9a5846cdce2.ctex"]
+source_file="res://Assets/Bg/Beach Trash.png"
+dest_files=["res://.godot/imported/Beach Trash.png-725df30b4cbba04a66433446ee1b1083.ctex"]
 
 [params]
 

@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://byriiv8jjaswp"]
+
+[ext_resource type="Texture2D" uid="uid://byssfai6rhsav" path="res://Assets/Plachold Box.png" id="1_axbbd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r2sto"]
+size = Vector2(206.875, 118.5)
+
+[node name="Placehold Boxes" type="Node2D"]
+
+[node name="Collection" type="Area2D" parent="."]
+position = Vector2(792, 323)
+
+[node name="Sprite2D" type="Sprite2D" parent="Collection"]
+z_index = 1
+position = Vector2(1.52588e-05, 15)
+scale = Vector2(2.915, 2.36)
+texture = ExtResource("1_axbbd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collection"]
+shape = SubResource("RectangleShape2D_r2sto")
+
+[node name="Label" type="Label" parent="Collection"]
+z_index = 50
+offset_left = -93.0
+offset_top = -34.0
+offset_right = 97.0
+offset_bottom = 15.0
+text = "Plastic Collection Facility
+            100 Coins"

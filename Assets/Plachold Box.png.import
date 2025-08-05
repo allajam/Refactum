@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjdl02j1ro43a"
-path="res://.godot/imported/Beach Trash.png-476206527a43c98699425e925bcc1ec7.ctex"
+uid="uid://byssfai6rhsav"
+path="res://.godot/imported/Plachold Box.png-5458c09474080d50ee6ff6ef0a2a3f6a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Beach Trash.png"
-dest_files=["res://.godot/imported/Beach Trash.png-476206527a43c98699425e925bcc1ec7.ctex"]
+source_file="res://Assets/Plachold Box.png"
+dest_files=["res://.godot/imported/Plachold Box.png-5458c09474080d50ee6ff6ef0a2a3f6a.ctex"]
 
 [params]
 

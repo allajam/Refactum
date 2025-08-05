@@ -15,10 +15,14 @@ run/main_scene="res://Refactum.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://Assets/Sounds/default_bus_layout.tres"
+
 [autoload]
 
-AudioManager="*res://game_audio.tscn"
-global_gold="*res://Global_Gold.gd"
+AudioManager="*res://Scenes/game_audio.tscn"
+global_gold="*res://Scripts/Global_Gold.gd"
 
 [display]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dymuxolvrxonk"
-path="res://.godot/imported/GRASS+.png-77e47f906d24ab5f138b0c2f7c286bc5.ctex"
+uid="uid://ca303twi28otq"
+path="res://.godot/imported/Sabbia.png-d78318427b59f768d6be1fd4ce66df62.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GRASS+.png"
-dest_files=["res://.godot/imported/GRASS+.png-77e47f906d24ab5f138b0c2f7c286bc5.ctex"]
+source_file="res://Assets/Bg/Sabbia.png"
+dest_files=["res://.godot/imported/Sabbia.png-d78318427b59f768d6be1fd4ce66df62.ctex"]
 
 [params]
 

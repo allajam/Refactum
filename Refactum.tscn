@@ -1,10 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://du3re5hwylfon"]
+[gd_scene load_steps=12 format=3 uid="uid://du3re5hwylfon"]
 
-[ext_resource type="Script" path="res://Main.gd" id="1_ew5a1"]
-[ext_resource type="PackedScene" uid="uid://3t3a2n1yu8yb" path="res://Background.tscn" id="2_1xlrf"]
-[ext_resource type="Script" path="res://Camera.gd" id="2_2p0h6"]
-[ext_resource type="PackedScene" uid="uid://djicghqaqc65b" path="res://Pause_Menu.tscn" id="4_mtxuk"]
-[ext_resource type="PackedScene" uid="uid://dlh3fs1q8wuxf" path="res://Money'.tscn" id="5_cqr7h"]
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_ew5a1"]
+[ext_resource type="PackedScene" uid="uid://3t3a2n1yu8yb" path="res://Scenes/Background.tscn" id="2_1xlrf"]
+[ext_resource type="Script" path="res://Scripts/Camera.gd" id="2_2p0h6"]
+[ext_resource type="PackedScene" uid="uid://djicghqaqc65b" path="res://Scenes/Pause_Menu.tscn" id="4_mtxuk"]
+[ext_resource type="PackedScene" uid="uid://dlh3fs1q8wuxf" path="res://Scenes/Money'.tscn" id="5_cqr7h"]
+[ext_resource type="Script" path="res://PlasCollection.gd" id="6_0oh3k"]
+[ext_resource type="Texture2D" uid="uid://nfyhodjsulxm" path="res://Assets/Collection.png" id="6_j1161"]
+[ext_resource type="Texture2D" uid="uid://b6is2tjjge7lq" path="res://Assets/Highlight Border.png" id="8_1r603"]
+[ext_resource type="PackedScene" uid="uid://byriiv8jjaswp" path="res://Scenes/placehold_boxes.tscn" id="9_ggi7l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hg7e4"]
+size = Vector2(95, 100)
+
+[sub_resource type="GDScript" id="GDScript_0cj7v"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ew5a1")
@@ -19,3 +28,26 @@ script = ExtResource("2_2p0h6")
 visible = false
 
 [node name="CanvasLayer" parent="." instance=ExtResource("5_cqr7h")]
+
+[node name="PlasCollection" type="Area2D" parent="."]
+script = ExtResource("6_0oh3k")
+
+[node name="Collection" type="Sprite2D" parent="PlasCollection"]
+position = Vector2(792, 323)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("6_j1161")
+region_enabled = true
+region_rect = Rect2(46.6618, 16.03, 53.3382, 66.8861)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlasCollection"]
+position = Vector2(791.5, 322)
+shape = SubResource("RectangleShape2D_hg7e4")
+script = SubResource("GDScript_0cj7v")
+
+[node name="HoverBorder" type="Sprite2D" parent="PlasCollection"]
+position = Vector2(795, 324)
+scale = Vector2(1.715, 1.815)
+texture = ExtResource("8_1r603")
+
+[node name="Placehold Boxes" parent="." instance=ExtResource("9_ggi7l")]
+position = Vector2(0, 1)

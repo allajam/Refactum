@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://3t3a2n1yu8yb"]
 
-[ext_resource type="Texture2D" uid="uid://dymuxolvrxonk" path="res://Assets/GRASS+.png" id="1_61iky"]
-[ext_resource type="Texture2D" uid="uid://s6k30y46fajw" path="res://Assets/Acqua.png" id="2_4lkk5"]
-[ext_resource type="Texture2D" uid="uid://cjdl02j1ro43a" path="res://Assets/Beach Trash.png" id="3_p7auv"]
+[ext_resource type="Texture2D" uid="uid://dymuxolvrxonk" path="res://Assets/Bg/GRASS+.png" id="1_pkpmn"]
+[ext_resource type="Texture2D" uid="uid://s6k30y46fajw" path="res://Assets/Bg/Acqua.png" id="2_t4ycf"]
+[ext_resource type="Texture2D" uid="uid://cjdl02j1ro43a" path="res://Assets/Bg/Beach Trash.png" id="3_5jqww"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y114u"]
-texture = ExtResource("1_61iky")
+texture = ExtResource("1_pkpmn")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -356,7 +356,7 @@ texture = ExtResource("1_61iky")
 sources/0 = SubResource("TileSetAtlasSource_y114u")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ltt5p"]
-texture = ExtResource("2_4lkk5")
+texture = ExtResource("2_t4ycf")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -440,48 +440,48 @@ layer_0/tile_data = PackedInt32Array(60, 0, 1, 65596, 0, 1, 131132, 0, 1, 196668
 [node name="BeachTrash" type="Sprite2D" parent="."]
 position = Vector2(950, -297)
 scale = Vector2(0.26087, 0.390547)
-texture = ExtResource("3_p7auv")
+texture = ExtResource("3_5jqww")
 
 [node name="BeachTrash2" type="Sprite2D" parent="BeachTrash"]
 position = Vector2(11.5, -599.159)
-texture = ExtResource("3_p7auv")
+texture = ExtResource("3_5jqww")
 
 [node name="BeachTrash3" type="Sprite2D" parent="BeachTrash"]
 position = Vector2(3.8335, -1200.88)
-texture = ExtResource("3_p7auv")
+texture = ExtResource("3_5jqww")
 
 [node name="BeachTrash4" type="Sprite2D" parent="BeachTrash"]
 position = Vector2(0, -1807.72)
-texture = ExtResource("3_p7auv")
+texture = ExtResource("3_5jqww")
 
 [node name="BeachTrash5" type="Sprite2D" parent="BeachTrash"]
 position = Vector2(11.5, -2406.88)
-texture = ExtResource("3_p7auv")
+texture = ExtResource("3_5jqww")
 
 [node name="BeachTrash6" type="Sprite2D" parent="BeachTrash"]
 position = Vector2(3.83374, -3008.6)
-texture = ExtResource("3_p7auv")
+texture = ExtResource("3_5jqww")
 
 [node name="BeachTrash7" type="Sprite2D" parent="BeachTrash"]
 position = Vector2(7.66676, 3612.88)
-texture = ExtResource("3_p7auv")
+texture = ExtResource("3_5jqww")
 
 [node name="BeachTrash8" type="Sprite2D" parent="BeachTrash"]
 position = Vector2(3.83342, 3013.72)
-texture = ExtResource("3_p7auv")
+texture = ExtResource("3_5jqww")
 
 [node name="BeachTrash9" type="Sprite2D" parent="BeachTrash"]
 position = Vector2(1.90735e-05, 2414.56)
-texture = ExtResource("3_p7auv")
+texture = ExtResource("3_5jqww")
 
 [node name="BeachTrash10" type="Sprite2D" parent="BeachTrash"]
 position = Vector2(-3.83324, 1807.72)
-texture = ExtResource("3_p7auv")
+texture = ExtResource("3_5jqww")
 
 [node name="BeachTrash11" type="Sprite2D" parent="BeachTrash"]
 position = Vector2(-3.83324, 1208.56)
-texture = ExtResource("3_p7auv")
+texture = ExtResource("3_5jqww")
 
 [node name="BeachTrash12" type="Sprite2D" parent="BeachTrash"]
 position = Vector2(-3.83325, 606.841)
-texture = ExtResource("3_p7auv")
+texture = ExtResource("3_5jqww")

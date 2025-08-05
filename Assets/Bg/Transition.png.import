@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s6k30y46fajw"
-path="res://.godot/imported/Acqua.png-a3fd81b097b68c512d28012186b34a1f.ctex"
+uid="uid://xoduvvre0mak"
+path="res://.godot/imported/Transition.png-4b82aa6f4457821308179b08dd64b0d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Acqua.png"
-dest_files=["res://.godot/imported/Acqua.png-a3fd81b097b68c512d28012186b34a1f.ctex"]
+source_file="res://Assets/Bg/Transition.png"
+dest_files=["res://.godot/imported/Transition.png-4b82aa6f4457821308179b08dd64b0d3.ctex"]
 
 [params]
 

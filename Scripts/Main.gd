@@ -13,3 +13,8 @@ func _input(event):
 		AudioManager.play_click()
 		global_gold.money += 10
 		AudioManager.play_bgm()
+
+func _ready():
+	global_gold.money = 500
+
+
