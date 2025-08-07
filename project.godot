@@ -23,6 +23,7 @@ buses/default_bus_layout="res://Assets/Sounds/default_bus_layout.tres"
 
 AudioManager="*res://Scenes/game_audio.tscn"
 global_gold="*res://Scripts/Global_Gold.gd"
+GameManager="*res://Scripts/GameManager.gd"
 
 [display]
 

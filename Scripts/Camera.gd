@@ -11,7 +11,11 @@ extends Camera2D
 var velocity: Vector2 = Vector2.ZERO
 
 func _ready():
-	zoom = Vector2(1.5, 1.5)
+	zoom = Vector2(1.7, 1.7)
+	limit_left = 0
+	limit_right = 2000
+	limit_top = 0
+	limit_bottom = 1000
 
 
 func _process(delta: float) -> void:
@@ -48,6 +52,9 @@ func _zoom_camera(amount: float) -> void:
 	new_zoom.y = clamp(new_zoom.y, min_zoom, max_zoom)
 	zoom = new_zoom
 	
+
+	
+
 	
 
 

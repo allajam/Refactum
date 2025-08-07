@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://byriiv8jjaswp"]
+[gd_scene load_steps=4 format=3 uid="uid://byriiv8jjaswp"]
 
+[ext_resource type="Script" path="res://Scripts/PurchaseBox1.gd" id="1_5322g"]
 [ext_resource type="Texture2D" uid="uid://byssfai6rhsav" path="res://Assets/Plachold Box.png" id="1_axbbd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r2sto"]
@@ -9,6 +10,8 @@ size = Vector2(206.875, 118.5)
 
 [node name="Collection" type="Area2D" parent="."]
 position = Vector2(792, 323)
+script = ExtResource("1_5322g")
+machine_scene = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Collection"]
 z_index = 1
