@@ -12,10 +12,30 @@ var velocity: Vector2 = Vector2.ZERO
 
 func _ready():
 	zoom = Vector2(1.7, 1.7)
-	limit_left = 0
-	limit_right = 2000
-	limit_top = 0
-	limit_bottom = 1000
+	var background = get_node("/root/Main/Background")
+	var tilemaps = [background.get_node("Aqua"), background.get_node("Grass")]
+	
+	var min_x = INF
+	var min_y = INF
+	var max_x = -INF
+	var max_y = -INF
+	
+	for tilemap in tilemaps:
+		var rect = tilemap.get_used_rect()
+		var cell_size = tilemap.tile_set.tile_size
+		
+		var top_left = rect.position * cell_size
+		var bottom_right = (rect.position + rect.size) * cell_size
+		
+		min_x = min(min_x, top_left.x)
+		min_y = min(min_y, top_left.y)
+		max_x = max(max_x, bottom_right.x)
+		max_y = max(max_y, bottom_right.y)
+	
+	limit_left = min_x
+	limit_top = min_y
+	limit_right = max_x
+	limit_bottom = max_y
 
 
 func _process(delta: float) -> void:

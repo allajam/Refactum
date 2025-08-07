@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://du3re5hwylfon"]
+[gd_scene load_steps=19 format=3 uid="uid://du3re5hwylfon"]
 
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_ew5a1"]
 [ext_resource type="PackedScene" uid="uid://3t3a2n1yu8yb" path="res://Scenes/Background.tscn" id="2_1xlrf"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b6is2tjjge7lq" path="res://Assets/Highlight Border.png" id="8_1r603"]
 [ext_resource type="Script" path="res://Scripts/Conveyer's.gd" id="9_brvnu"]
 [ext_resource type="Texture2D" uid="uid://dqv7w6ssbgs8g" path="res://Assets/pixilart-sprite (1).png" id="9_nh6jv"]
+[ext_resource type="PackedScene" uid="uid://cqay73esv1cni" path="res://Scenes/splash_screen.tscn" id="11_bpbtp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hg7e4"]
 size = Vector2(95, 100)
@@ -59,7 +60,7 @@ script = ExtResource("1_ew5a1")
 position = Vector2(576, 323)
 script = ExtResource("2_2p0h6")
 
-[node name="Node2D" parent="." instance=ExtResource("2_1xlrf")]
+[node name="Background" parent="." instance=ExtResource("2_1xlrf")]
 
 [node name="PauseMenu" parent="." instance=ExtResource("4_mtxuk")]
 visible = false
@@ -99,3 +100,5 @@ position = Vector2(694, 329)
 sprite_frames = SubResource("SpriteFrames_wetri")
 animation = &"Conveyer Belt"
 autoplay = "Conveyer Belt"
+
+[node name="Splash screen" parent="." instance=ExtResource("11_bpbtp")]
