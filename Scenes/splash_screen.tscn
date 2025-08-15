@@ -23,8 +23,8 @@ texture = ExtResource("1_5pxk1")
 
 [node name="TitleBackground" type="Sprite2D" parent="Control"]
 z_index = -35
-position = Vector2(1280.5, 801)
-scale = Vector2(0.908736, 1.04036)
+position = Vector2(1280.5, 799.998)
+scale = Vector2(0.908736, 1.04166)
 texture = ExtResource("2_n6wvh")
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
@@ -42,7 +42,7 @@ offset_left = 928.0
 offset_top = 649.0
 offset_right = 1590.0
 offset_bottom = 822.0
-theme_override_font_sizes/font_size = 120
+theme_override_font_sizes/font_size = 110
 text = "Start Game"
 
 [node name="Settings" type="Button" parent="Control"]

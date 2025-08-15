@@ -9,7 +9,7 @@ func play_click():
 
 func _ready():
 	bgm_player.stream.loop = true
-
+	bgm_player.play()
 func play_bgm():
 	if not bgm_player.playing:
 		bgm_player.play()

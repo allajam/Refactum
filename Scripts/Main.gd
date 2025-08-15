@@ -11,12 +11,12 @@ func _input(event):
 			pause_menu.show_menu()
 	if event.is_action_pressed("leftclick"):
 		AudioManager.play_click()
-		global_gold.money += 10
-		AudioManager.play_bgm()
+		
+		
 		GameManager.conveyor_active = true  # Start
 		
 
 func _ready():
-	global_gold.money = 500
+	global_gold.money = 490
 
 
