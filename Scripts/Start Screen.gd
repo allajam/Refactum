@@ -5,5 +5,5 @@ func _ready():
 
 func _on_start_button_pressed():
 	self.hide()  # Hides the entire splash screen
-
+	
 

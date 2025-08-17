@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://du3re5hwylfon"]
+[gd_scene load_steps=32 format=3 uid="uid://du3re5hwylfon"]
 
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_ew5a1"]
 [ext_resource type="PackedScene" uid="uid://3t3a2n1yu8yb" path="res://Scenes/Background.tscn" id="2_1xlrf"]
@@ -11,7 +11,7 @@
 [ext_resource type="Script" path="res://Scripts/Conveyer's.gd" id="9_brvnu"]
 [ext_resource type="Texture2D" uid="uid://dqv7w6ssbgs8g" path="res://Assets/pixilart-sprite (1).png" id="9_nh6jv"]
 [ext_resource type="PackedScene" uid="uid://cqay73esv1cni" path="res://Scenes/splash_screen.tscn" id="11_bpbtp"]
-[ext_resource type="Script" path="res://FloatPlastic.gd" id="12_msheh"]
+[ext_resource type="Script" path="res://Scripts/FloatPlastic.gd" id="12_msheh"]
 [ext_resource type="Texture2D" uid="uid://ck02fxtndiihx" path="res://Assets/Pink.png" id="13_f2hdx"]
 [ext_resource type="Texture2D" uid="uid://oe52je6iq2ls" path="res://Assets/Brown.png" id="14_gox74"]
 [ext_resource type="Texture2D" uid="uid://bhhnfd0v2krjr" path="res://Assets/Green.png" id="15_6wxj5"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://c0j83qqx3hquy" path="res://Assets/Random.png" id="21_oo2q6"]
 [ext_resource type="Texture2D" uid="uid://dhsp22ohugch7" path="res://Assets/Red.png" id="22_7k5o1"]
 [ext_resource type="Texture2D" uid="uid://umpgjpt3v0vk" path="res://Assets/Yellow.png" id="23_s86a2"]
+[ext_resource type="PackedScene" uid="uid://dyvy1e2k6hqx8" path="res://Scenes/Tasks.tscn" id="24_rgmqa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hg7e4"]
 size = Vector2(95, 100)
@@ -67,6 +68,7 @@ animations = [{
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ew5a1")
+metadata/_edit_horizontal_guides_ = [0.0, 1.0]
 
 [node name="PauseMenu" parent="." instance=ExtResource("4_mtxuk")]
 visible = false
@@ -74,7 +76,7 @@ visible = false
 [node name="CanvasLayer" parent="." instance=ExtResource("5_cqr7h")]
 
 [node name="Splash screen" parent="." instance=ExtResource("11_bpbtp")]
-visible = false
+layer = 128
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 323)
@@ -272,3 +274,9 @@ scale = Vector2(3.23, 3.23)
 texture = ExtResource("23_s86a2")
 region_enabled = true
 region_rect = Rect2(41.334, 34.4669, 15.3698, 15.3697)
+
+[node name="Sprite2D" type="Sprite2D" parent="FloatPlastic"]
+
+[node name="UI" type="Node2D" parent="."]
+
+[node name="Tasks" parent="UI" instance=ExtResource("24_rgmqa")]

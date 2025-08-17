@@ -17,6 +17,7 @@ func _input(event):
 		
 
 func _ready():
-	global_gold.money = 490
-
-
+	global_gold.money = 500
+	$"Splash screen".visible = true
+	
+	

@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://cqay73esv1cni"]
 
 [ext_resource type="Texture2D" uid="uid://nkuucktai245" path="res://Assets/Refactum Tittle.png" id="1_5pxk1"]
-[ext_resource type="Script" path="res://Scenes/Start Screen.gd" id="1_cc1fh"]
+[ext_resource type="Script" path="res://Scripts/Start Screen.gd" id="1_cc1fh"]
 [ext_resource type="Texture2D" uid="uid://b6i5dilsfnpyk" path="res://Assets/Title Background.png" id="2_n6wvh"]
 
-[node name="Splash screen" type="CanvasLayer"]
+[node name="Splash_screen" type="CanvasLayer"]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
