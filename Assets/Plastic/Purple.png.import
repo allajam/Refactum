@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck02fxtndiihx"
-path="res://.godot/imported/Pink.png-81d2aa7c1416fd99bc807d7cce9fdc9a.ctex"
+uid="uid://bn6sd4x6dm50y"
+path="res://.godot/imported/Purple.png-26b3727a102e7e7c4e099bd3eeb35016.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pink.png"
-dest_files=["res://.godot/imported/Pink.png-81d2aa7c1416fd99bc807d7cce9fdc9a.ctex"]
+source_file="res://Assets/Plastic/Purple.png"
+dest_files=["res://.godot/imported/Purple.png-26b3727a102e7e7c4e099bd3eeb35016.ctex"]
 
 [params]
 

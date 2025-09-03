@@ -1,26 +1,98 @@
-[gd_scene load_steps=2 format=3 uid="uid://dyvy1e2k6hqx8"]
+[gd_scene load_steps=4 format=3 uid="uid://dyvy1e2k6hqx8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_eu5ch"]
-font_size = 80
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_73fwk"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_wmkki"]
+font_size = 26
+font_color = Color(1, 0, 0, 1)
 
 [node name="UI" type="CanvasLayer"]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
+offset_top = 96.0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 136.0
+metadata/_edit_group_ = true
 
-[node name="Label" type="Label" parent="Control"]
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 2.55
+anchor_right = 11.525
+anchor_bottom = 12.425
+offset_right = -3.05176e-05
+
+[node name="Tasks" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.009
 anchor_top = 0.108
 anchor_right = 0.087
 anchor_bottom = 0.139
-offset_left = 22.64
-offset_top = 168.68
-offset_right = 159.52
-offset_bottom = 195.44
+offset_left = 18.64
+offset_top = 119.68
+offset_right = 365.52
+offset_bottom = 187.44
 text = "Current Tasks:"
 label_settings = SubResource("LabelSettings_eu5ch")
+
+[node name="Collect_10_(1)" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 213.0
+offset_right = 261.0
+offset_bottom = 275.0
+text = "Collect 10 Plastic [  ] "
+label_settings = SubResource("LabelSettings_73fwk")
+
+[node name="Complete(1)" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 277.0
+offset_top = 219.0
+offset_right = 322.0
+offset_bottom = 281.0
+text = "X"
+label_settings = SubResource("LabelSettings_wmkki")
+
+[node name="Build Colector(2)" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 275.0
+offset_right = 303.0
+offset_bottom = 337.0
+text = "Build Collector [  ]"
+label_settings = SubResource("LabelSettings_73fwk")
+
+[node name="Build Colector(2)2" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 343.0
+offset_right = 303.0
+offset_bottom = 405.0
+text = "Recycle 10 Plastic [  ]
+"
+label_settings = SubResource("LabelSettings_73fwk")
+
+[node name="Complete(2)" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 247.0
+offset_top = 281.0
+offset_right = 303.0
+offset_bottom = 343.0
+text = "X"
+label_settings = SubResource("LabelSettings_wmkki")
+
+[node name="Complete(2)2" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 287.0
+offset_top = 348.0
+offset_right = 343.0
+offset_bottom = 410.0
+text = "X"
+label_settings = SubResource("LabelSettings_wmkki")

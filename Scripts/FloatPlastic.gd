@@ -1,6 +1,6 @@
 extends Node2D
 
-var drift_data: Dictionary = {}  # Stores drift info for each sprite
+var drift_data: Dictionary = {}  
 @export var bobbing_amplitude: float = 3.0
 @export var bobbing_speed: float = 2.0
 @export var confine_area: Rect2 = Rect2(Vector2(1072.49, -234.5), Vector2(642.5, 1115)) 

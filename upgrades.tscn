@@ -1,0 +1,150 @@
+[gd_scene load_steps=8 format=3 uid="uid://ddxtmt050j0bb"]
+
+[ext_resource type="Script" path="res://UpgradeMenu.gd" id="1_qv8gm"]
+[ext_resource type="StyleBox" uid="uid://b83luei5ycw1" path="res://ButtonUPG.tres" id="2_ua8d6"]
+
+[sub_resource type="Theme" id="Theme_fwyc1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2flmq"]
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_vtje0"]
+font_size = 61
+
+[sub_resource type="GDScript" id="GDScript_tayjp"]
+script/source = "extends Control
+
+func _ready():
+	pass
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_41vdh"]
+bg_color = Color(0.281187, 0.281187, 0.281187, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Upgrades" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_qv8gm")
+
+[node name="Upgrades" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 18.55
+anchor_right = 8.25
+anchor_bottom = 20.875
+offset_left = -40.0
+offset_top = -6.10352e-05
+offset_bottom = -7.00006
+theme = SubResource("Theme_fwyc1")
+theme_override_font_sizes/font_size = 50
+text = "Upgrades"
+
+[node name="UpgradeBG" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 18.9
+anchor_top = 6.275
+anchor_right = 45.025
+anchor_bottom = 30.725
+offset_left = -20.0001
+offset_bottom = 26.9999
+theme_override_styles/panel = SubResource("StyleBoxFlat_2flmq")
+
+[node name="Label" type="Label" parent="Control/UpgradeBG"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.038
+anchor_top = 0.024
+anchor_right = 0.361
+anchor_bottom = 0.113
+offset_left = -0.470001
+offset_top = -0.120001
+offset_right = -0.465027
+offset_bottom = 0.434998
+text = "Upgrades"
+label_settings = SubResource("LabelSettings_vtje0")
+
+[node name="Exit_Button" type="Button" parent="Control/UpgradeBG"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.882
+anchor_top = 0.043
+anchor_right = 0.945
+anchor_bottom = 0.105
+offset_left = -0.330017
+offset_top = -0.214996
+offset_right = -0.425049
+offset_bottom = 0.475006
+theme_override_font_sizes/font_size = 40
+text = "x"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/UpgradeBG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0001
+offset_top = 179.0
+offset_right = -25.0001
+offset_bottom = -87.9999
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 0
+script = SubResource("GDScript_tayjp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/UpgradeBG/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Button" type="Button" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("2_ua8d6")
+text = "  Plastic Per click (From Ocean) "
+alignment = 0
+
+[node name="Button2" type="Button" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1000, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_41vdh")
+text = "  Income Per Plastic Recycled"
+alignment = 0
+
+[node name="Button3" type="Button" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1000, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_41vdh")
+text = "  Machine Working Speed"
+alignment = 0
+
+[node name="Button4" type="Button" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1000, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_41vdh")
+text = "  Golden Plastic Chance (100 Gold)"
+alignment = 0
+
+[node name="Button5" type="Button" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1000, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_41vdh")
+text = "  Golden Plastic Amount (+200)"
+alignment = 0

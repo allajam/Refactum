@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqay73esv1cni"]
+[gd_scene load_steps=5 format=3 uid="uid://cqay73esv1cni"]
 
-[ext_resource type="Texture2D" uid="uid://nkuucktai245" path="res://Assets/Refactum Tittle.png" id="1_5pxk1"]
+[ext_resource type="Texture2D" uid="uid://nkuucktai245" path="res://Assets/UI Assets/Refactum Tittle.png" id="1_5pxk1"]
 [ext_resource type="Script" path="res://Scripts/Start Screen.gd" id="1_cc1fh"]
-[ext_resource type="Texture2D" uid="uid://b6i5dilsfnpyk" path="res://Assets/Title Background.png" id="2_n6wvh"]
+[ext_resource type="Texture2D" uid="uid://b6i5dilsfnpyk" path="res://Assets/UI Assets/Title Background.png" id="2_n6wvh"]
+
+[sub_resource type="Theme" id="Theme_y2afp"]
 
 [node name="Splash_screen" type="CanvasLayer"]
 
@@ -18,7 +20,7 @@ script = ExtResource("1_cc1fh")
 [node name="RefactumTitle" type="Sprite2D" parent="Control"]
 z_index = 30
 position = Vector2(1251, 400)
-scale = Vector2(2.126, 1.455)
+scale = Vector2(2.501, 1.711)
 texture = ExtResource("1_5pxk1")
 
 [node name="TitleBackground" type="Sprite2D" parent="Control"]
@@ -34,7 +36,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.568627)
+color = Color(0, 0, 0, 0.666667)
+metadata/_edit_lock_ = true
 
 [node name="Start_Game" type="Button" parent="Control"]
 layout_mode = 0
@@ -42,7 +45,9 @@ offset_left = 928.0
 offset_top = 649.0
 offset_right = 1590.0
 offset_bottom = 822.0
-theme_override_font_sizes/font_size = 110
+theme = SubResource("Theme_y2afp")
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 65
 text = "Start Game"
 
 [node name="Settings" type="Button" parent="Control"]
@@ -63,3 +68,19 @@ offset_bottom = 1313.0
 theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 70
 text = "Credits"
+
+[node name="LineEdit" type="LineEdit" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.445
+anchor_top = 0.887
+anchor_right = 0.553
+anchor_bottom = 0.953
+offset_left = -0.200073
+offset_top = -0.200073
+offset_right = -0.680054
+offset_bottom = 0.199951
+theme_override_font_sizes/font_size = 40
+placeholder_text = "Enter Name:"
+alignment = 1
+expand_to_text_length = true
