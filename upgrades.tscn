@@ -101,6 +101,8 @@ offset_left = 40.0001
 offset_top = 179.0
 offset_right = -25.0001
 offset_bottom = -87.9999
+grow_horizontal = 2
+grow_vertical = 2
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 0
 script = SubResource("GDScript_tayjp")
@@ -109,7 +111,7 @@ script = SubResource("GDScript_tayjp")
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Button" type="Button" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
+[node name="PlasticPerClick" type="Button" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
@@ -117,7 +119,21 @@ theme_override_styles/normal = ExtResource("2_ua8d6")
 text = "  Plastic Per click (From Ocean) "
 alignment = 0
 
-[node name="Button2" type="Button" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="PlasticPerClickMult" type="Button" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("2_ua8d6")
+text = "  Plastic Per Click Mult"
+alignment = 0
+
+[node name="Label2" type="Label" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="IncomePerRecycle" type="Button" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(1000, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
@@ -125,7 +141,10 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_41vdh")
 text = "  Income Per Plastic Recycled"
 alignment = 0
 
-[node name="Button3" type="Button" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
+[node name="Label3" type="Label" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MachineWorkSpeed" type="Button" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(1000, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
@@ -133,7 +152,10 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_41vdh")
 text = "  Machine Working Speed"
 alignment = 0
 
-[node name="Button4" type="Button" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
+[node name="Label4" type="Label" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="GoldenPlasChance" type="Button" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(1000, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
@@ -141,10 +163,23 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_41vdh")
 text = "  Golden Plastic Chance (100 Gold)"
 alignment = 0
 
-[node name="Button5" type="Button" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
+[node name="Label5" type="Label" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="GoldenPlasAmount" type="Button" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(1000, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_41vdh")
 text = "  Golden Plastic Amount (+200)"
 alignment = 0
+
+[node name="Label6" type="Label" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="Control/UpgradeBG/ScrollContainer/VBoxContainer/PlasticPerClick" to="Control" method="_on_plastic_per_click_pressed"]
+[connection signal="pressed" from="Control/UpgradeBG/ScrollContainer/VBoxContainer/PlasticPerClickMult" to="Control" method="_on_plastic_per_click_mult_pressed"]
+[connection signal="pressed" from="Control/UpgradeBG/ScrollContainer/VBoxContainer/IncomePerRecycle" to="Control" method="_on_income_per_recycle_pressed"]
+[connection signal="pressed" from="Control/UpgradeBG/ScrollContainer/VBoxContainer/MachineWorkSpeed" to="Control" method="_on_machine_work_speed_pressed"]
+[connection signal="pressed" from="Control/UpgradeBG/ScrollContainer/VBoxContainer/GoldenPlasChance" to="Control" method="_on_golden_plas_chance_pressed"]
+[connection signal="pressed" from="Control/UpgradeBG/ScrollContainer/VBoxContainer/GoldenPlasAmount" to="Control" method="_on_golden_plas_amount_pressed"]

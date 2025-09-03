@@ -10,3 +10,4 @@ func deduct_coins(amount: int) -> void:
 	print("Coins left: ", player_coins)
 
 var conveyor_active = false
+var plastic_per_click: int = 5   # starting value

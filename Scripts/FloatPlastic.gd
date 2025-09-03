@@ -41,7 +41,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			if sprite is Sprite2D and sprite.texture:
 				var rect: Rect2 = sprite.get_rect()
 				if rect.has_point(sprite.to_local(click_pos)):
-					global_gold.money += 5
+					global_gold.money += GameManager.plastic_per_click
 					_despawn_plastic(sprite)
 					break
 
