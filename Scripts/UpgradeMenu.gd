@@ -101,12 +101,16 @@ func buy_upgrade(upgrade_name: String):
 		global_gold.money -= cost
 		upgrades[upgrade_name]["level"] += 1
 		print("Bought", upgrade_name, "New level:", upgrades[upgrade_name]["level"])
-		# Refresh the panel if it's visible
+		
+		# Refresh the info panel if it's visible
 		update_upgrade_panel()
+		
+		# Update the cost labels on the buttons
+		update_upgrade_cost_labels()
 	else:
-		# Call the banner in Main
 		var banner = get_tree().root.get_node("Main/Banner/NotEnoughMoneyBanner")
 		banner.show_banner("Not enough gold! Cost: " + str(cost))
+
 
 
 func _on_plastic_per_click_pressed():
