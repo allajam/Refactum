@@ -18,9 +18,8 @@ func _ready():
 	open_button.pressed.connect(_on_open_button_pressed)
 	close_button.pressed.connect(_on_close_button_pressed)
 	upgrade1_button.pressed.connect(_on_upgrade_button_pressed)
+	info_panel.visible = false
 	
-	
-
 	update_upgrade_cost_labels()
 	
 	# Start hidden
@@ -49,7 +48,14 @@ func get_plastic_gain_per_click() -> int:
 func _on_upgrade_button_pressed():
 	var gain = get_plastic_gain_per_click()
 	GameManager.plastic_per_click += gain
-	print("Clicked! +%d plastic (total per click: %d)" % [gain, GameManager.plastic_per_click])
+	print("Clicked +%d plastic (total per click: %d)" % [gain, GameManager.plastic_per_click])
+
+func show_not_enough_money_banner(cost):
+	# Get the banner node
+	var banner = get_tree().root.get_node("Main/UI_Layer/NotEnoughMoneyBanner")
+	# Call the function on it
+	banner.show_banner("Not enough gold! Cost: " + str(cost))
+
 
 
 var upgrades = {
@@ -95,9 +101,12 @@ func buy_upgrade(upgrade_name: String):
 		global_gold.money -= cost
 		upgrades[upgrade_name]["level"] += 1
 		print("Bought", upgrade_name, "New level:", upgrades[upgrade_name]["level"])
-		update_upgrade_cost_labels()
+		# Refresh the panel if it's visible
+		update_upgrade_panel()
 	else:
-		print("Not enough money! Cost:", cost)
+		# Call the banner in Main
+		var banner = get_tree().root.get_node("Main/Banner/NotEnoughMoneyBanner")
+		banner.show_banner("Not enough gold! Cost: " + str(cost))
 
 
 func _on_plastic_per_click_pressed():
@@ -145,8 +154,14 @@ func update_upgrade_cost_labels():
 	var cost6 = get_upgrade_cost("golden_plastic_amount")
 	upgrade6_button.get_node("Label6").text = " %d" % cost6
 
-###INFO PANEL Code:
-func show_upgrade_info(upgrade_name: String):
+###INFOPANEL Code:
+var current_hovered_button: Button = null
+var current_hovered_upgrade: String = ""
+
+func show_upgrade_info(upgrade_name: String, button: Button, update_only: bool=false):
+	current_hovered_upgrade = upgrade_name
+	current_hovered_button = button
+
 	var upgrade = upgrades[upgrade_name]
 	var level = upgrade["level"]
 
@@ -154,25 +169,30 @@ func show_upgrade_info(upgrade_name: String):
 	var next_effect: float
 
 	if upgrade_name == "plastic_per_click":
-		# Base gain without multiplier
 		current_effect = 5 + level
 		next_effect = 5 + level + 1
 	elif upgrade_name == "plastic_per_click_mult":
-		# Show multiplier itself, not total gain
-		current_effect = pow(2, level)       # current multiplier
-		next_effect = pow(2, level + 1)      # next multiplier
+		current_effect = pow(2, level)
+		next_effect = pow(2, level + 1)
 	else:
-		# Other upgrades
 		current_effect = level * upgrade.get("effect_per_level", 1)
 		next_effect = (level + 1) * upgrade.get("effect_per_level", 1)
 
 	lbl_level.text = "Level %d  -->  Level %d" % [level, level + 1]
 	lbl_effect.text = "%.1fx  -->  %.1fx" % [current_effect, next_effect]
 
+	if not update_only:
+		# Only set position when first showing
+		var button_pos = button.get_global_position()
+		var button_size = button.get_size()
+		info_panel.position = button_pos + Vector2(button_size.x + -700, -270)
+
 	info_panel.visible = true
 
 
-
+func update_upgrade_panel():
+	if current_hovered_button and current_hovered_upgrade != "":
+		show_upgrade_info(current_hovered_upgrade, current_hovered_button, true)
 
 
 
@@ -192,19 +212,19 @@ func _on_golden_plas_amount_mouse_exited():
 
 func _on_plastic_per_click_mouse_entered():
 	info_panel.visible = true
-	show_upgrade_info("plastic_per_click")
+	show_upgrade_info("plastic_per_click", upgrade1_button)
 func _on_plastic_per_click_mult_mouse_entered():
 	info_panel.visible = true
-	show_upgrade_info("plastic_per_click_mult")
+	show_upgrade_info("plastic_per_click_mult", upgrade2_button)
 func _on_income_per_recycle_mouse_entered():
 	info_panel.visible = true
-	show_upgrade_info("income_per_plastic")
+	show_upgrade_info("income_per_plastic", upgrade3_button)
 func _on_machine_work_speed_mouse_entered():
 	info_panel.visible = true
-	show_upgrade_info("machine_speed")
+	show_upgrade_info("machine_speed", upgrade4_button)
 func _on_golden_plas_chance_mouse_entered():
 	info_panel.visible = true
-	show_upgrade_info("golden_plastic_chance")
+	show_upgrade_info("golden_plastic_chance", upgrade5_button)
 func _on_golden_plas_amount_mouse_entered():
 	info_panel.visible = true
-	show_upgrade_info("golden_plastic_amount")
+	show_upgrade_info("golden_plastic_amount", upgrade6_button)

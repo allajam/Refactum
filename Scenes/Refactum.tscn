@@ -1,30 +1,32 @@
-[gd_scene load_steps=33 format=3 uid="uid://du3re5hwylfon"]
+[gd_scene load_steps=35 format=3 uid="uid://du3re5hwylfon"]
 
-[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_ew5a1"]
-[ext_resource type="PackedScene" uid="uid://3t3a2n1yu8yb" path="res://Scenes/Background.tscn" id="2_1xlrf"]
-[ext_resource type="Script" path="res://Scripts/Camera.gd" id="2_2p0h6"]
-[ext_resource type="PackedScene" uid="uid://djicghqaqc65b" path="res://Scenes/Pause_Menu.tscn" id="4_mtxuk"]
-[ext_resource type="PackedScene" uid="uid://dlh3fs1q8wuxf" path="res://Scenes/Money'.tscn" id="5_cqr7h"]
-[ext_resource type="Script" path="res://Scripts/HoverBorder.gd" id="6_0oh3k"]
-[ext_resource type="Texture2D" uid="uid://nfyhodjsulxm" path="res://Assets/Collection.png" id="6_j1161"]
-[ext_resource type="Texture2D" uid="uid://b6is2tjjge7lq" path="res://Assets/Highlight Border.png" id="8_1r603"]
-[ext_resource type="Script" path="res://Scripts/Conveyer's.gd" id="9_brvnu"]
-[ext_resource type="Texture2D" uid="uid://dqv7w6ssbgs8g" path="res://Assets/Conveyer.png" id="9_nh6jv"]
-[ext_resource type="PackedScene" uid="uid://cqay73esv1cni" path="res://Scenes/splash_screen.tscn" id="11_bpbtp"]
-[ext_resource type="Script" path="res://Scripts/FloatPlastic.gd" id="12_msheh"]
-[ext_resource type="Texture2D" uid="uid://ck02fxtndiihx" path="res://Assets/Plastic/Pink.png" id="13_f2hdx"]
-[ext_resource type="Texture2D" uid="uid://oe52je6iq2ls" path="res://Assets/Plastic/Brown.png" id="14_gox74"]
-[ext_resource type="Texture2D" uid="uid://bhhnfd0v2krjr" path="res://Assets/Plastic/Green.png" id="15_6wxj5"]
-[ext_resource type="Texture2D" uid="uid://b5k7rcf6b0tjd" path="res://Assets/Plastic/Grey.png" id="16_cg6g8"]
-[ext_resource type="Texture2D" uid="uid://pjpt2uw753gm" path="res://Assets/Plastic/LightGreen.png" id="17_uxtkn"]
-[ext_resource type="Texture2D" uid="uid://bj84dwcrm43y3" path="res://Assets/Plastic/Orange.png" id="18_6bihn"]
-[ext_resource type="Texture2D" uid="uid://bn6sd4x6dm50y" path="res://Assets/Plastic/Purple.png" id="19_fadmu"]
-[ext_resource type="Texture2D" uid="uid://cmulxon1uo4i4" path="res://Assets/Plastic/Random (2).png" id="20_a7dt8"]
-[ext_resource type="Texture2D" uid="uid://c0j83qqx3hquy" path="res://Assets/Plastic/Random.png" id="21_oo2q6"]
-[ext_resource type="Texture2D" uid="uid://dhsp22ohugch7" path="res://Assets/Plastic/Red.png" id="22_7k5o1"]
-[ext_resource type="Texture2D" uid="uid://umpgjpt3v0vk" path="res://Assets/Plastic/Yellow.png" id="23_s86a2"]
-[ext_resource type="PackedScene" uid="uid://dyvy1e2k6hqx8" path="res://Scenes/Tasks.tscn" id="24_rgmqa"]
-[ext_resource type="PackedScene" uid="uid://ddxtmt050j0bb" path="res://upgrades.tscn" id="25_wni6e"]
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_idph0"]
+[ext_resource type="PackedScene" uid="uid://djicghqaqc65b" path="res://Scenes/Pause_Menu.tscn" id="2_b6x72"]
+[ext_resource type="PackedScene" uid="uid://dlh3fs1q8wuxf" path="res://Scenes/Money'.tscn" id="3_2n2f5"]
+[ext_resource type="PackedScene" uid="uid://cqay73esv1cni" path="res://Scenes/splash_screen.tscn" id="4_c0ksl"]
+[ext_resource type="Script" path="res://Scripts/Camera.gd" id="5_rxp1t"]
+[ext_resource type="PackedScene" uid="uid://3t3a2n1yu8yb" path="res://Scenes/Background.tscn" id="6_6jwcs"]
+[ext_resource type="Script" path="res://Scripts/HoverBorder.gd" id="7_m2264"]
+[ext_resource type="Texture2D" uid="uid://nfyhodjsulxm" path="res://Assets/Collection.png" id="8_3ttpl"]
+[ext_resource type="Texture2D" uid="uid://b6is2tjjge7lq" path="res://Assets/Highlight Border.png" id="9_pfnbm"]
+[ext_resource type="Script" path="res://Scripts/Conveyer's.gd" id="10_pwvml"]
+[ext_resource type="Texture2D" uid="uid://dqv7w6ssbgs8g" path="res://Assets/Conveyer.png" id="11_eg1hu"]
+[ext_resource type="Script" path="res://Scripts/FloatPlastic.gd" id="12_3vlp0"]
+[ext_resource type="Texture2D" uid="uid://ck02fxtndiihx" path="res://Assets/Plastic/Pink.png" id="13_4rklb"]
+[ext_resource type="Texture2D" uid="uid://oe52je6iq2ls" path="res://Assets/Plastic/Brown.png" id="14_k0elt"]
+[ext_resource type="Texture2D" uid="uid://bhhnfd0v2krjr" path="res://Assets/Plastic/Green.png" id="15_xuvmb"]
+[ext_resource type="Texture2D" uid="uid://b5k7rcf6b0tjd" path="res://Assets/Plastic/Grey.png" id="16_apeyr"]
+[ext_resource type="Texture2D" uid="uid://pjpt2uw753gm" path="res://Assets/Plastic/LightGreen.png" id="17_hbl65"]
+[ext_resource type="Texture2D" uid="uid://bj84dwcrm43y3" path="res://Assets/Plastic/Orange.png" id="18_0a27c"]
+[ext_resource type="Texture2D" uid="uid://bn6sd4x6dm50y" path="res://Assets/Plastic/Purple.png" id="19_bx5v7"]
+[ext_resource type="Texture2D" uid="uid://cmulxon1uo4i4" path="res://Assets/Plastic/Random (2).png" id="20_1m4uc"]
+[ext_resource type="Texture2D" uid="uid://c0j83qqx3hquy" path="res://Assets/Plastic/Random.png" id="21_ihxhg"]
+[ext_resource type="Texture2D" uid="uid://dhsp22ohugch7" path="res://Assets/Plastic/Red.png" id="22_ksxkw"]
+[ext_resource type="Texture2D" uid="uid://umpgjpt3v0vk" path="res://Assets/Plastic/Yellow.png" id="23_c4op4"]
+[ext_resource type="PackedScene" uid="uid://dyvy1e2k6hqx8" path="res://Scenes/Tasks.tscn" id="24_ef580"]
+[ext_resource type="PackedScene" uid="uid://ddxtmt050j0bb" path="res://Scenes/upgrades.tscn" id="25_3y3vt"]
+[ext_resource type="Script" path="res://Scripts/NotEnoughMoneyBanner.gd" id="26_28v35"]
+[ext_resource type="PackedScene" uid="uid://s4ey4wjmoeej" path="res://Scenes/Tutorial.tscn" id="27_vnfnj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hg7e4"]
 size = Vector2(95, 100)
@@ -32,19 +34,19 @@ size = Vector2(95, 100)
 [sub_resource type="GDScript" id="GDScript_0cj7v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_om4rj"]
-atlas = ExtResource("9_nh6jv")
+atlas = ExtResource("11_eg1hu")
 region = Rect2(0, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_isrk6"]
-atlas = ExtResource("9_nh6jv")
+atlas = ExtResource("11_eg1hu")
 region = Rect2(100, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o5ufy"]
-atlas = ExtResource("9_nh6jv")
+atlas = ExtResource("11_eg1hu")
 region = Rect2(200, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iumk5"]
-atlas = ExtResource("9_nh6jv")
+atlas = ExtResource("11_eg1hu")
 region = Rect2(300, 0, 100, 100)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wetri"]
@@ -68,35 +70,35 @@ animations = [{
 }]
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_ew5a1")
+script = ExtResource("1_idph0")
 metadata/_edit_horizontal_guides_ = [0.0, 1.0]
 
-[node name="PauseMenu" parent="." instance=ExtResource("4_mtxuk")]
+[node name="PauseMenu" parent="." instance=ExtResource("2_b6x72")]
 visible = false
 
-[node name="CanvasLayer" parent="." instance=ExtResource("5_cqr7h")]
+[node name="CanvasLayer" parent="." instance=ExtResource("3_2n2f5")]
 
-[node name="Splash screen" parent="." instance=ExtResource("11_bpbtp")]
+[node name="Splash screen" parent="." instance=ExtResource("4_c0ksl")]
 layer = 128
 visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 323)
-script = ExtResource("2_2p0h6")
+script = ExtResource("5_rxp1t")
 
-[node name="Background" parent="." instance=ExtResource("2_1xlrf")]
+[node name="Background" parent="." instance=ExtResource("6_6jwcs")]
 
 [node name="Placehold Boxes" type="Node2D" parent="."]
 
 [node name="Machines" type="Node2D" parent="."]
 
 [node name="PlasCollection" type="Area2D" parent="Machines"]
-script = ExtResource("6_0oh3k")
+script = ExtResource("7_m2264")
 
 [node name="Collection" type="Sprite2D" parent="Machines/PlasCollection"]
 position = Vector2(792, 323)
 scale = Vector2(1.8, 1.8)
-texture = ExtResource("6_j1161")
+texture = ExtResource("8_3ttpl")
 region_enabled = true
 region_rect = Rect2(46.6618, 16.03, 53.3382, 66.8861)
 
@@ -109,10 +111,10 @@ script = SubResource("GDScript_0cj7v")
 [node name="HoverBorder" type="Sprite2D" parent="Machines/PlasCollection"]
 position = Vector2(795, 324)
 scale = Vector2(1.715, 1.815)
-texture = ExtResource("8_1r603")
+texture = ExtResource("9_pfnbm")
 
 [node name="Conveyer\'s" type="Node2D" parent="."]
-script = ExtResource("9_brvnu")
+script = ExtResource("10_pwvml")
 
 [node name="Conveyer Belt" type="AnimatedSprite2D" parent="Conveyer\'s"]
 position = Vector2(694, 329)
@@ -121,159 +123,159 @@ animation = &"Conveyer Belt"
 autoplay = "Conveyer Belt"
 
 [node name="FloatPlastic" type="Node2D" parent="."]
-script = ExtResource("12_msheh")
+script = ExtResource("12_3vlp0")
 
 [node name="Pink" type="Sprite2D" parent="FloatPlastic"]
 position = Vector2(1431.07, 367)
 scale = Vector2(3.23, 3.23)
-texture = ExtResource("13_f2hdx")
+texture = ExtResource("13_4rklb")
 region_enabled = true
 region_rect = Rect2(43.9245, 31.7745, 12.2631, 16.1972)
 
 [node name="Pink2" type="Sprite2D" parent="FloatPlastic"]
 position = Vector2(1444.07, 333)
 scale = Vector2(3.23, 3.23)
-texture = ExtResource("13_f2hdx")
+texture = ExtResource("13_4rklb")
 region_enabled = true
 region_rect = Rect2(43.9245, 31.7745, 12.2631, 16.1972)
 
 [node name="Brown" type="Sprite2D" parent="FloatPlastic"]
 position = Vector2(1450.07, 237.225)
 scale = Vector2(3.23, 3.23)
-texture = ExtResource("14_gox74")
+texture = ExtResource("14_k0elt")
 region_enabled = true
 region_rect = Rect2(30.0218, 34.5785, 22.1038, 15.2581)
 
 [node name="Brown2" type="Sprite2D" parent="FloatPlastic"]
 position = Vector2(1413.83, 300.337)
 scale = Vector2(3.25137, 3.88166)
-texture = ExtResource("14_gox74")
+texture = ExtResource("14_k0elt")
 region_enabled = true
 region_rect = Rect2(30.0218, 34.5785, 22.1038, 15.2581)
 
 [node name="Green" type="Sprite2D" parent="FloatPlastic"]
 position = Vector2(635, 1166)
 scale = Vector2(3.23, 3.23)
-texture = ExtResource("15_6wxj5")
+texture = ExtResource("15_xuvmb")
 region_enabled = true
 region_rect = Rect2(38.0831, 32.125, 15.841, 18.2021)
 
 [node name="Green2" type="Sprite2D" parent="FloatPlastic"]
 position = Vector2(635, 1166)
 scale = Vector2(3.23, 3.23)
-texture = ExtResource("15_6wxj5")
+texture = ExtResource("15_xuvmb")
 region_enabled = true
 region_rect = Rect2(38.0831, 32.125, 15.841, 18.2021)
 
 [node name="Grey" type="Sprite2D" parent="FloatPlastic"]
 position = Vector2(1357.07, 271)
 scale = Vector2(3.23, 3.23)
-texture = ExtResource("16_cg6g8")
+texture = ExtResource("16_apeyr")
 region_enabled = true
 region_rect = Rect2(36.3307, 31.7745, 15.9584, 17.7351)
 
 [node name="Grey2" type="Sprite2D" parent="FloatPlastic"]
 position = Vector2(1303.07, 263)
 scale = Vector2(3.23, 3.23)
-texture = ExtResource("16_cg6g8")
+texture = ExtResource("16_apeyr")
 region_enabled = true
 region_rect = Rect2(36.3307, 31.7745, 15.9584, 17.7351)
 
 [node name="LightGreen" type="Sprite2D" parent="FloatPlastic"]
 position = Vector2(1402.07, 393)
 scale = Vector2(3.23, 3.23)
-texture = ExtResource("17_uxtkn")
+texture = ExtResource("17_hbl65")
 region_enabled = true
 region_rect = Rect2(35.9973, 33.7046, 14.4932, 16.1321)
 
 [node name="LightGreen2" type="Sprite2D" parent="FloatPlastic"]
 position = Vector2(1350.07, 432)
 scale = Vector2(3.23, 3.23)
-texture = ExtResource("17_uxtkn")
+texture = ExtResource("17_hbl65")
 region_enabled = true
 region_rect = Rect2(35.9973, 33.7046, 14.4932, 16.1321)
 
 [node name="Orange" type="Sprite2D" parent="FloatPlastic"]
 position = Vector2(1360.07, 343)
 scale = Vector2(3.23, 3.23)
-texture = ExtResource("18_6bihn")
+texture = ExtResource("18_0a27c")
 region_enabled = true
 region_rect = Rect2(44.392, 33.1765, 14.7644, 15.025)
 
 [node name="Orange2" type="Sprite2D" parent="FloatPlastic"]
 position = Vector2(1316.07, 359)
 scale = Vector2(3.23, 3.23)
-texture = ExtResource("18_6bihn")
+texture = ExtResource("18_0a27c")
 region_enabled = true
 region_rect = Rect2(44.392, 33.1765, 14.7644, 15.025)
 
 [node name="Purple" type="Sprite2D" parent="FloatPlastic"]
 position = Vector2(1234.07, 390)
 scale = Vector2(3.23, 3.23)
-texture = ExtResource("19_fadmu")
+texture = ExtResource("19_bx5v7")
 region_enabled = true
 region_rect = Rect2(38.3909, 32.3413, 18.6399, 15.6968)
 
 [node name="Purple2" type="Sprite2D" parent="FloatPlastic"]
 position = Vector2(1187.07, 359)
 scale = Vector2(3.23, 3.23)
-texture = ExtResource("19_fadmu")
+texture = ExtResource("19_bx5v7")
 region_enabled = true
 region_rect = Rect2(38.3909, 32.3413, 18.6399, 15.6968)
 
 [node name="Random(2)" type="Sprite2D" parent="FloatPlastic"]
 position = Vector2(1158.07, 490)
 scale = Vector2(3.23, 3.23)
-texture = ExtResource("20_a7dt8")
+texture = ExtResource("20_1m4uc")
 region_enabled = true
 region_rect = Rect2(35.7748, 36.429, 18.6399, 16.1873)
 
 [node name="Random(2)2" type="Sprite2D" parent="FloatPlastic"]
 position = Vector2(1102.07, 497)
 scale = Vector2(3.23, 3.23)
-texture = ExtResource("20_a7dt8")
+texture = ExtResource("20_1m4uc")
 region_enabled = true
 region_rect = Rect2(35.7748, 36.429, 18.6399, 16.1873)
 
 [node name="Random" type="Sprite2D" parent="FloatPlastic"]
 position = Vector2(1182.07, 435)
 scale = Vector2(3.23, 3.23)
-texture = ExtResource("21_oo2q6")
+texture = ExtResource("21_ihxhg")
 region_enabled = true
 region_rect = Rect2(39.6989, 31.8508, 20.1115, 17.3318)
 
 [node name="Random2" type="Sprite2D" parent="FloatPlastic"]
 position = Vector2(1134.07, 406)
 scale = Vector2(3.23, 3.23)
-texture = ExtResource("21_oo2q6")
+texture = ExtResource("21_ihxhg")
 region_enabled = true
 region_rect = Rect2(39.6989, 31.8508, 20.1115, 17.3318)
 
 [node name="Red" type="Sprite2D" parent="FloatPlastic"]
 position = Vector2(1395.07, 549)
 scale = Vector2(3.23, 3.23)
-texture = ExtResource("22_7k5o1")
+texture = ExtResource("22_ksxkw")
 region_enabled = true
 region_rect = Rect2(34.2277, 34.5785, 15.9358, 16.2392)
 
 [node name="Red2" type="Sprite2D" parent="FloatPlastic"]
 position = Vector2(1365.07, 523)
 scale = Vector2(3.23, 3.23)
-texture = ExtResource("22_7k5o1")
+texture = ExtResource("22_ksxkw")
 region_enabled = true
 region_rect = Rect2(34.2277, 34.5785, 15.9358, 16.2392)
 
 [node name="Yellow" type="Sprite2D" parent="FloatPlastic"]
 position = Vector2(1259.07, 601)
 scale = Vector2(3.23, 3.23)
-texture = ExtResource("23_s86a2")
+texture = ExtResource("23_c4op4")
 region_enabled = true
 region_rect = Rect2(41.334, 34.4669, 15.3698, 15.3697)
 
 [node name="Yellow2" type="Sprite2D" parent="FloatPlastic"]
 position = Vector2(1354.07, 619)
 scale = Vector2(3.23, 3.23)
-texture = ExtResource("23_s86a2")
+texture = ExtResource("23_c4op4")
 region_enabled = true
 region_rect = Rect2(41.334, 34.4669, 15.3698, 15.3697)
 
@@ -281,6 +283,38 @@ region_rect = Rect2(41.334, 34.4669, 15.3698, 15.3697)
 
 [node name="UI" type="Node2D" parent="."]
 
-[node name="Tasks" parent="UI" instance=ExtResource("24_rgmqa")]
+[node name="Tasks" parent="UI" instance=ExtResource("24_ef580")]
 
-[node name="Upgrades" parent="." instance=ExtResource("25_wni6e")]
+[node name="Upgrades" parent="." instance=ExtResource("25_3y3vt")]
+
+[node name="Banner" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="NotEnoughMoneyBanner" type="Control" parent="Banner"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("26_28v35")
+
+[node name="Label" type="Label" parent="Banner/NotEnoughMoneyBanner"]
+z_index = 330
+layout_mode = 0
+offset_left = 1023.0
+offset_top = 117.0
+offset_right = 1545.0
+offset_bottom = 186.0
+theme_override_colors/font_color = Color(0.686275, 0, 0, 0.862745)
+theme_override_font_sizes/font_size = 50
+text = "You Can't Afford This!"
+
+[node name="ColorRect" type="ColorRect" parent="Banner/NotEnoughMoneyBanner"]
+z_index = 15
+layout_mode = 0
+offset_left = 928.0
+offset_top = 96.0
+offset_right = 1776.0
+offset_bottom = 196.0
+color = Color(0.152941, 0.152941, 0.152941, 0.917647)
+
+[node name="CanvasLayer2" parent="." instance=ExtResource("27_vnfnj")]
