@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ddxtmt050j0bb"]
+[gd_scene load_steps=9 format=3 uid="uid://ddxtmt050j0bb"]
 
 [ext_resource type="Script" path="res://UpgradeMenu.gd" id="1_qv8gm"]
 [ext_resource type="StyleBox" uid="uid://b83luei5ycw1" path="res://ButtonUPG.tres" id="2_ua8d6"]
+[ext_resource type="Texture2D" uid="uid://d4kyvhdi3vegf" path="res://Assets/Coins/MonedaD.png" id="3_jqepm"]
 
 [sub_resource type="Theme" id="Theme_fwyc1"]
 
@@ -119,8 +120,18 @@ theme_override_styles/normal = ExtResource("2_ua8d6")
 text = "  Plastic Per click (From Ocean) "
 alignment = 0
 
-[node name="Label" type="Label" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer/PlasticPerClick"]
 layout_mode = 2
+offset_left = 638.0
+offset_top = 26.0
+offset_right = 1638.0
+offset_bottom = 81.0
+theme_override_font_sizes/font_size = 30
+
+[node name="MonedaD" type="Sprite2D" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer/PlasticPerClick"]
+position = Vector2(616.36, 45.36)
+scale = Vector2(2.42, 2.42)
+texture = ExtResource("3_jqepm")
 
 [node name="PlasticPerClickMult" type="Button" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 100)
@@ -130,8 +141,18 @@ theme_override_styles/normal = ExtResource("2_ua8d6")
 text = "  Plastic Per Click Mult"
 alignment = 0
 
-[node name="Label2" type="Label" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer/PlasticPerClickMult"]
 layout_mode = 2
+offset_left = 638.0
+offset_top = 25.0
+offset_right = 1638.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 30
+
+[node name="MonedaD2" type="Sprite2D" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer/PlasticPerClickMult"]
+position = Vector2(616.36, 39.36)
+scale = Vector2(2.42, 2.42)
+texture = ExtResource("3_jqepm")
 
 [node name="IncomePerRecycle" type="Button" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(1000, 100)
@@ -141,8 +162,18 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_41vdh")
 text = "  Income Per Plastic Recycled"
 alignment = 0
 
-[node name="Label3" type="Label" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
+[node name="Label3" type="Label" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer/IncomePerRecycle"]
 layout_mode = 2
+offset_left = 638.0
+offset_top = 25.0
+offset_right = 1638.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 30
+
+[node name="MonedaD3" type="Sprite2D" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer/IncomePerRecycle"]
+position = Vector2(616.36, 46.36)
+scale = Vector2(2.42, 2.42)
+texture = ExtResource("3_jqepm")
 
 [node name="MachineWorkSpeed" type="Button" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(1000, 100)
@@ -152,8 +183,18 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_41vdh")
 text = "  Machine Working Speed"
 alignment = 0
 
-[node name="Label4" type="Label" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
+[node name="Label4" type="Label" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer/MachineWorkSpeed"]
 layout_mode = 2
+offset_left = 638.0
+offset_top = 27.0
+offset_right = 1638.0
+offset_bottom = 82.0
+theme_override_font_sizes/font_size = 30
+
+[node name="MonedaD4" type="Sprite2D" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer/MachineWorkSpeed"]
+position = Vector2(616.36, 47.36)
+scale = Vector2(2.42, 2.42)
+texture = ExtResource("3_jqepm")
 
 [node name="GoldenPlasChance" type="Button" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(1000, 100)
@@ -163,8 +204,18 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_41vdh")
 text = "  Golden Plastic Chance (100 Gold)"
 alignment = 0
 
-[node name="Label5" type="Label" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
+[node name="Label5" type="Label" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer/GoldenPlasChance"]
 layout_mode = 2
+offset_left = 638.0
+offset_top = 42.0
+offset_right = 1638.0
+offset_bottom = 65.0
+theme_override_font_sizes/font_size = 30
+
+[node name="MonedaD5" type="Sprite2D" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer/GoldenPlasChance"]
+position = Vector2(616.36, 54.36)
+scale = Vector2(2.42, 2.42)
+texture = ExtResource("3_jqepm")
 
 [node name="GoldenPlasAmount" type="Button" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(1000, 100)
@@ -174,12 +225,67 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_41vdh")
 text = "  Golden Plastic Amount (+200)"
 alignment = 0
 
-[node name="Label6" type="Label" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer"]
+[node name="Label6" type="Label" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer/GoldenPlasAmount"]
 layout_mode = 2
+offset_left = 638.0
+offset_top = 31.0
+offset_right = 1638.0
+offset_bottom = 73.0
+theme_override_font_sizes/font_size = 30
 
+[node name="MonedaD6" type="Sprite2D" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer/GoldenPlasAmount"]
+position = Vector2(616.36, 54.36)
+scale = Vector2(2.42, 2.42)
+texture = ExtResource("3_jqepm")
+
+[node name="UpgradeInfoPanel" type="Control" parent="Control/UpgradeBG"]
+anchors_preset = 0
+offset_left = 232.0
+offset_top = 850.0
+offset_right = 632.0
+offset_bottom = 983.0
+
+[node name="ColorRect" type="ColorRect" parent="Control/UpgradeBG/UpgradeInfoPanel"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 16.0
+offset_right = 411.0
+offset_bottom = 116.0
+color = Color(0.223529, 0.223529, 0.223529, 0.54902)
+
+[node name="Label_Level" type="Label" parent="Control/UpgradeBG/UpgradeInfoPanel"]
+layout_mode = 2
+offset_left = 11.0
+offset_top = 29.0
+offset_right = 411.0
+offset_bottom = 57.0
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+
+[node name="Label_Effect" type="Label" parent="Control/UpgradeBG/UpgradeInfoPanel"]
+layout_mode = 2
+offset_left = 11.0
+offset_top = 67.0
+offset_right = 411.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="Control/UpgradeBG/ScrollContainer/VBoxContainer/PlasticPerClick" to="Control" method="_on_plastic_per_click_mouse_entered"]
+[connection signal="mouse_exited" from="Control/UpgradeBG/ScrollContainer/VBoxContainer/PlasticPerClick" to="Control" method="_on_plastic_per_click_mouse_exited"]
 [connection signal="pressed" from="Control/UpgradeBG/ScrollContainer/VBoxContainer/PlasticPerClick" to="Control" method="_on_plastic_per_click_pressed"]
+[connection signal="mouse_entered" from="Control/UpgradeBG/ScrollContainer/VBoxContainer/PlasticPerClickMult" to="Control" method="_on_plastic_per_click_mult_mouse_entered"]
+[connection signal="mouse_exited" from="Control/UpgradeBG/ScrollContainer/VBoxContainer/PlasticPerClickMult" to="Control" method="_on_plastic_per_click_mult_mouse_exited"]
 [connection signal="pressed" from="Control/UpgradeBG/ScrollContainer/VBoxContainer/PlasticPerClickMult" to="Control" method="_on_plastic_per_click_mult_pressed"]
+[connection signal="mouse_entered" from="Control/UpgradeBG/ScrollContainer/VBoxContainer/IncomePerRecycle" to="Control" method="_on_income_per_recycle_mouse_entered"]
+[connection signal="mouse_exited" from="Control/UpgradeBG/ScrollContainer/VBoxContainer/IncomePerRecycle" to="Control" method="_on_income_per_recycle_mouse_exited"]
 [connection signal="pressed" from="Control/UpgradeBG/ScrollContainer/VBoxContainer/IncomePerRecycle" to="Control" method="_on_income_per_recycle_pressed"]
+[connection signal="mouse_entered" from="Control/UpgradeBG/ScrollContainer/VBoxContainer/MachineWorkSpeed" to="Control" method="_on_machine_work_speed_mouse_entered"]
+[connection signal="mouse_exited" from="Control/UpgradeBG/ScrollContainer/VBoxContainer/MachineWorkSpeed" to="Control" method="_on_machine_work_speed_mouse_exited"]
 [connection signal="pressed" from="Control/UpgradeBG/ScrollContainer/VBoxContainer/MachineWorkSpeed" to="Control" method="_on_machine_work_speed_pressed"]
+[connection signal="mouse_entered" from="Control/UpgradeBG/ScrollContainer/VBoxContainer/GoldenPlasChance" to="Control" method="_on_golden_plas_chance_mouse_entered"]
+[connection signal="mouse_exited" from="Control/UpgradeBG/ScrollContainer/VBoxContainer/GoldenPlasChance" to="Control" method="_on_golden_plas_chance_mouse_exited"]
 [connection signal="pressed" from="Control/UpgradeBG/ScrollContainer/VBoxContainer/GoldenPlasChance" to="Control" method="_on_golden_plas_chance_pressed"]
+[connection signal="mouse_entered" from="Control/UpgradeBG/ScrollContainer/VBoxContainer/GoldenPlasAmount" to="Control" method="_on_golden_plas_amount_mouse_entered"]
+[connection signal="mouse_exited" from="Control/UpgradeBG/ScrollContainer/VBoxContainer/GoldenPlasAmount" to="Control" method="_on_golden_plas_amount_mouse_exited"]
 [connection signal="pressed" from="Control/UpgradeBG/ScrollContainer/VBoxContainer/GoldenPlasAmount" to="Control" method="_on_golden_plas_amount_pressed"]
