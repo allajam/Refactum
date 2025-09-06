@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://du3re5hwylfon"]
+[gd_scene load_steps=34 format=3 uid="uid://du3re5hwylfon"]
 
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_idph0"]
 [ext_resource type="PackedScene" uid="uid://djicghqaqc65b" path="res://Scenes/Pause_Menu.tscn" id="2_b6x72"]
@@ -26,7 +26,6 @@
 [ext_resource type="PackedScene" uid="uid://dyvy1e2k6hqx8" path="res://Scenes/Tasks.tscn" id="24_ef580"]
 [ext_resource type="PackedScene" uid="uid://ddxtmt050j0bb" path="res://Scenes/upgrades.tscn" id="25_3y3vt"]
 [ext_resource type="Script" path="res://Scripts/NotEnoughMoneyBanner.gd" id="26_28v35"]
-[ext_resource type="PackedScene" uid="uid://s4ey4wjmoeej" path="res://Scenes/Tutorial.tscn" id="27_vnfnj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hg7e4"]
 size = Vector2(95, 100)
@@ -316,5 +315,3 @@ offset_top = 96.0
 offset_right = 1776.0
 offset_bottom = 196.0
 color = Color(0.152941, 0.152941, 0.152941, 0.917647)
-
-[node name="CanvasLayer2" parent="." instance=ExtResource("27_vnfnj")]

@@ -16,8 +16,9 @@ func show_banner(message: String):
 
 	# Stop any running tweens
 	if is_inside_tree() and has_node("Tween"):
-		var t = get_node("Tween")
-		t.kill()  # stops previous animation
+		var existing_tween = get_node("Tween")
+		existing_tween.kill()
+
 
 	position = START_POS
 	modulate.a = 0.0
