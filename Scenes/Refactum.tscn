@@ -1,16 +1,19 @@
-[gd_scene load_steps=34 format=3 uid="uid://du3re5hwylfon"]
+[gd_scene load_steps=40 format=3 uid="uid://du3re5hwylfon"]
 
-[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_idph0"]
+[ext_resource type="Script" path="res://Scripts/Small Things/Main.gd" id="1_idph0"]
 [ext_resource type="PackedScene" uid="uid://djicghqaqc65b" path="res://Scenes/Pause_Menu.tscn" id="2_b6x72"]
 [ext_resource type="PackedScene" uid="uid://dlh3fs1q8wuxf" path="res://Scenes/Money'.tscn" id="3_2n2f5"]
 [ext_resource type="PackedScene" uid="uid://cqay73esv1cni" path="res://Scenes/splash_screen.tscn" id="4_c0ksl"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="5_rxp1t"]
 [ext_resource type="PackedScene" uid="uid://3t3a2n1yu8yb" path="res://Scenes/Background.tscn" id="6_6jwcs"]
-[ext_resource type="Script" path="res://Scripts/HoverBorder.gd" id="7_m2264"]
-[ext_resource type="Texture2D" uid="uid://nfyhodjsulxm" path="res://Assets/Collection.png" id="8_3ttpl"]
-[ext_resource type="Texture2D" uid="uid://b6is2tjjge7lq" path="res://Assets/Highlight Border.png" id="9_pfnbm"]
+[ext_resource type="Texture2D" uid="uid://nfyhodjsulxm" path="res://Assets/Machines/Collection.png" id="8_3ttpl"]
+[ext_resource type="Texture2D" uid="uid://krum5u7rwuq1" path="res://Assets/Machines/Washer-removebg-preview.png" id="9_el6xc"]
+[ext_resource type="Texture2D" uid="uid://dk5vk1jxlh214" path="res://Assets/Machines/Sorter_machine-removebg-preview.png" id="10_546jx"]
+[ext_resource type="Texture2D" uid="uid://g77cqhs03qvc" path="res://Assets/Machines/Grinder_Machine-removebg-preview.png" id="10_kw2yr"]
 [ext_resource type="Script" path="res://Scripts/Conveyer's.gd" id="10_pwvml"]
-[ext_resource type="Texture2D" uid="uid://dqv7w6ssbgs8g" path="res://Assets/Conveyer.png" id="11_eg1hu"]
+[ext_resource type="Texture2D" uid="uid://dqv7w6ssbgs8g" path="res://Assets/Machines/Conveyer.png" id="11_eg1hu"]
+[ext_resource type="Texture2D" uid="uid://bglxn2h20mmi" path="res://Assets/Machines/IMG_0045-removebg-preview.png" id="11_wvfj1"]
+[ext_resource type="Texture2D" uid="uid://c8oln8nq5xfs2" path="res://Assets/Machines/Melter_Machine-removebg-preview.png" id="12_0fybe"]
 [ext_resource type="Script" path="res://Scripts/FloatPlastic.gd" id="12_3vlp0"]
 [ext_resource type="Texture2D" uid="uid://ck02fxtndiihx" path="res://Assets/Plastic/Pink.png" id="13_4rklb"]
 [ext_resource type="Texture2D" uid="uid://oe52je6iq2ls" path="res://Assets/Plastic/Brown.png" id="14_k0elt"]
@@ -26,6 +29,18 @@
 [ext_resource type="PackedScene" uid="uid://dyvy1e2k6hqx8" path="res://Scenes/Tasks.tscn" id="24_ef580"]
 [ext_resource type="PackedScene" uid="uid://ddxtmt050j0bb" path="res://Scenes/upgrades.tscn" id="25_3y3vt"]
 [ext_resource type="Script" path="res://Scripts/NotEnoughMoneyBanner.gd" id="26_28v35"]
+[ext_resource type="PackedScene" uid="uid://cifi76ikwsc7w" path="res://Scenes/tutorial.tscn" id="27_meswv"]
+[ext_resource type="PackedScene" uid="uid://cegcvo8niitad" path="res://Scenes/machines.tscn" id="31_ilnpn"]
+
+[sub_resource type="GDScript" id="GDScript_3tnyf"]
+script/source = "extends Area2D
+
+@onready var hover_border2 = $HoverBorder
+
+func _ready():
+	pass
+	
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hg7e4"]
 size = Vector2(95, 100)
@@ -75,14 +90,14 @@ metadata/_edit_horizontal_guides_ = [0.0, 1.0]
 [node name="PauseMenu" parent="." instance=ExtResource("2_b6x72")]
 visible = false
 
-[node name="CanvasLayer" parent="." instance=ExtResource("3_2n2f5")]
+[node name="Coin Amount" parent="." instance=ExtResource("3_2n2f5")]
 
 [node name="Splash screen" parent="." instance=ExtResource("4_c0ksl")]
 layer = 128
 visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(576, 323)
+position = Vector2(221, 326)
 script = ExtResource("5_rxp1t")
 
 [node name="Background" parent="." instance=ExtResource("6_6jwcs")]
@@ -90,9 +105,11 @@ script = ExtResource("5_rxp1t")
 [node name="Placehold Boxes" type="Node2D" parent="."]
 
 [node name="Machines" type="Node2D" parent="."]
+position = Vector2(-351, -135)
+scale = Vector2(1.445, 1.445)
 
 [node name="PlasCollection" type="Area2D" parent="Machines"]
-script = ExtResource("7_m2264")
+script = SubResource("GDScript_3tnyf")
 
 [node name="Collection" type="Sprite2D" parent="Machines/PlasCollection"]
 position = Vector2(792, 323)
@@ -107,19 +124,225 @@ position = Vector2(791.5, 322)
 shape = SubResource("RectangleShape2D_hg7e4")
 script = SubResource("GDScript_0cj7v")
 
-[node name="HoverBorder" type="Sprite2D" parent="Machines/PlasCollection"]
-position = Vector2(795, 324)
-scale = Vector2(1.715, 1.815)
-texture = ExtResource("9_pfnbm")
+[node name="Shredder" type="Area2D" parent="Machines"]
+script = SubResource("GDScript_3tnyf")
+
+[node name="Collection" type="Sprite2D" parent="Machines/Shredder"]
+position = Vector2(578, 321)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("10_kw2yr")
+region_enabled = true
+region_rect = Rect2(46.6618, 16.03, 484.088, 361.22)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machines/Shredder"]
+visible = false
+position = Vector2(791.5, 322)
+shape = SubResource("RectangleShape2D_hg7e4")
+script = SubResource("GDScript_0cj7v")
+
+[node name="Washer" type="Area2D" parent="Machines"]
+script = SubResource("GDScript_3tnyf")
+
+[node name="Collection" type="Sprite2D" parent="Machines/Washer"]
+position = Vector2(291, 329)
+scale = Vector2(0.505, 0.505)
+texture = ExtResource("9_el6xc")
+region_enabled = true
+region_rect = Rect2(46.6618, 16.03, 484.088, 361.22)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machines/Washer"]
+visible = false
+position = Vector2(791.5, 322)
+shape = SubResource("RectangleShape2D_hg7e4")
+script = SubResource("GDScript_0cj7v")
+
+[node name="Sorter" type="Area2D" parent="Machines"]
+script = SubResource("GDScript_3tnyf")
+
+[node name="Collection" type="Sprite2D" parent="Machines/Sorter"]
+position = Vector2(-12, 321)
+scale = Vector2(0.505, 0.505)
+texture = ExtResource("10_546jx")
+region_enabled = true
+region_rect = Rect2(46.6618, 16.03, 484.088, 394.47)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machines/Sorter"]
+visible = false
+position = Vector2(791.5, 322)
+shape = SubResource("RectangleShape2D_hg7e4")
+script = SubResource("GDScript_0cj7v")
+
+[node name="Extruder" type="Area2D" parent="Machines"]
+script = SubResource("GDScript_3tnyf")
+
+[node name="Collection" type="Sprite2D" parent="Machines/Extruder"]
+position = Vector2(-271.28, 265.744)
+scale = Vector2(0.246814, 0.198666)
+texture = ExtResource("12_0fybe")
+region_enabled = true
+region_rect = Rect2(46.6618, 150.479, 438.734, 210.744)
+
+[node name="Collection2" type="Sprite2D" parent="Machines/Extruder"]
+position = Vector2(-271.28, 347.405)
+scale = Vector2(0.246814, 0.198666)
+texture = ExtResource("12_0fybe")
+region_enabled = true
+region_rect = Rect2(46.6618, 150.479, 438.734, 210.744)
+
+[node name="Collection3" type="Sprite2D" parent="Machines/Extruder"]
+position = Vector2(-271.28, 306.574)
+scale = Vector2(0.246814, 0.198666)
+texture = ExtResource("12_0fybe")
+region_enabled = true
+region_rect = Rect2(46.6618, 150.479, 438.734, 210.744)
+
+[node name="Collection4" type="Sprite2D" parent="Machines/Extruder"]
+position = Vector2(-271.28, 382.007)
+scale = Vector2(0.246814, 0.198666)
+texture = ExtResource("12_0fybe")
+region_enabled = true
+region_rect = Rect2(46.6618, 150.479, 438.734, 210.744)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machines/Extruder"]
+visible = false
+position = Vector2(791.5, 322)
+shape = SubResource("RectangleShape2D_hg7e4")
+script = SubResource("GDScript_0cj7v")
+
+[node name="Sell" type="Area2D" parent="Machines"]
+script = SubResource("GDScript_3tnyf")
+
+[node name="Collection" type="Sprite2D" parent="Machines/Sell"]
+position = Vector2(-522.491, 338.408)
+scale = Vector2(0.525227, 0.52915)
+texture = ExtResource("11_wvfj1")
+region_enabled = true
+region_rect = Rect2(46.6618, 16.03, 417.779, 394.47)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machines/Sell"]
+visible = false
+position = Vector2(791.5, 322)
+shape = SubResource("RectangleShape2D_hg7e4")
+script = SubResource("GDScript_0cj7v")
+
+[node name="Machine Labels" type="Node2D" parent="Machines"]
+
+[node name="Collector" type="Label" parent="Machines/Machine Labels"]
+offset_left = 751.557
+offset_top = 235.294
+offset_right = 791.557
+offset_bottom = 258.294
+text = "Collector"
+
+[node name="Shredder" type="Label" parent="Machines/Machine Labels"]
+offset_left = 540.484
+offset_top = 255.363
+offset_right = 612.484
+offset_bottom = 278.363
+text = "Shredder"
+
+[node name="Washer" type="Label" parent="Machines/Machine Labels"]
+offset_left = 271.28
+offset_top = 253.979
+offset_right = 330.28
+offset_bottom = 276.979
+text = "Washer"
+
+[node name="Separator" type="Label" parent="Machines/Machine Labels"]
+offset_left = -85.1211
+offset_top = 195.848
+offset_right = -8.12111
+offset_bottom = 218.848
+text = "Separator"
+
+[node name="Extruder" type="Label" parent="Machines/Machine Labels"]
+offset_left = -303.806
+offset_top = 219.377
+offset_right = -235.806
+offset_bottom = 242.377
+text = "Extruder"
+
+[node name="Sell" type="Label" parent="Machines/Machine Labels"]
+offset_left = -510.727
+offset_top = 217.301
+offset_right = -470.727
+offset_bottom = 240.301
+text = "Market"
 
 [node name="Conveyer\'s" type="Node2D" parent="."]
+position = Vector2(-351, -135)
+scale = Vector2(1.445, 1.445)
 script = ExtResource("10_pwvml")
 
 [node name="Conveyer Belt" type="AnimatedSprite2D" parent="Conveyer\'s"]
-position = Vector2(694, 329)
+position = Vector2(696, 328)
 sprite_frames = SubResource("SpriteFrames_wetri")
 animation = &"Conveyer Belt"
 autoplay = "Conveyer Belt"
+
+[node name="Conveyer Belt2" type="AnimatedSprite2D" parent="Conveyer\'s"]
+position = Vector2(456, 330)
+sprite_frames = SubResource("SpriteFrames_wetri")
+animation = &"Conveyer Belt"
+autoplay = "Conveyer Belt"
+
+[node name="Conveyer Belt3" type="AnimatedSprite2D" parent="Conveyer\'s"]
+position = Vector2(137, 329)
+sprite_frames = SubResource("SpriteFrames_wetri")
+animation = &"Conveyer Belt"
+autoplay = "Conveyer Belt"
+
+[node name="Conveyer Belt8" type="AnimatedSprite2D" parent="Conveyer\'s"]
+position = Vector2(-365.398, 268.512)
+sprite_frames = SubResource("SpriteFrames_wetri")
+animation = &"Conveyer Belt"
+autoplay = "Conveyer Belt"
+
+[node name="Conveyer Belt9" type="AnimatedSprite2D" parent="Conveyer\'s"]
+position = Vector2(-365.398, 310.035)
+sprite_frames = SubResource("SpriteFrames_wetri")
+animation = &"Conveyer Belt"
+autoplay = "Conveyer Belt"
+
+[node name="Conveyer Belt10" type="AnimatedSprite2D" parent="Conveyer\'s"]
+position = Vector2(-365.398, 349.481)
+sprite_frames = SubResource("SpriteFrames_wetri")
+animation = &"Conveyer Belt"
+autoplay = "Conveyer Belt"
+
+[node name="Conveyer Belt11" type="AnimatedSprite2D" parent="Conveyer\'s"]
+position = Vector2(-365.398, 384.775)
+sprite_frames = SubResource("SpriteFrames_wetri")
+animation = &"Conveyer Belt"
+autoplay = "Conveyer Belt"
+
+[node name="Conveyer Belt4" type="AnimatedSprite2D" parent="Conveyer\'s"]
+position = Vector2(-174, 385)
+sprite_frames = SubResource("SpriteFrames_wetri")
+animation = &"Conveyer Belt"
+autoplay = "Conveyer Belt"
+metadata/_edit_lock_ = true
+
+[node name="Conveyer Belt5" type="AnimatedSprite2D" parent="Conveyer\'s"]
+position = Vector2(-174, 350)
+sprite_frames = SubResource("SpriteFrames_wetri")
+animation = &"Conveyer Belt"
+autoplay = "Conveyer Belt"
+metadata/_edit_lock_ = true
+
+[node name="Conveyer Belt6" type="AnimatedSprite2D" parent="Conveyer\'s"]
+position = Vector2(-174, 309)
+sprite_frames = SubResource("SpriteFrames_wetri")
+animation = &"Conveyer Belt"
+autoplay = "Conveyer Belt"
+metadata/_edit_lock_ = true
+
+[node name="Conveyer Belt7" type="AnimatedSprite2D" parent="Conveyer\'s"]
+position = Vector2(-174, 268)
+sprite_frames = SubResource("SpriteFrames_wetri")
+animation = &"Conveyer Belt"
+autoplay = "Conveyer Belt"
+metadata/_edit_lock_ = true
 
 [node name="FloatPlastic" type="Node2D" parent="."]
 script = ExtResource("12_3vlp0")
@@ -282,7 +505,10 @@ region_rect = Rect2(41.334, 34.4669, 15.3698, 15.3697)
 
 [node name="UI" type="Node2D" parent="."]
 
+[node name="Tutorial" parent="UI" instance=ExtResource("27_meswv")]
+
 [node name="Tasks" parent="UI" instance=ExtResource("24_ef580")]
+visible = false
 
 [node name="Upgrades" parent="." instance=ExtResource("25_3y3vt")]
 
@@ -315,3 +541,5 @@ offset_top = 96.0
 offset_right = 1776.0
 offset_bottom = 196.0
 color = Color(0.152941, 0.152941, 0.152941, 0.917647)
+
+[node name="Machines2" parent="." instance=ExtResource("31_ilnpn")]

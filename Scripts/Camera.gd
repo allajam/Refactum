@@ -11,7 +11,7 @@ extends Camera2D
 var velocity: Vector2 = Vector2.ZERO
 
 func _ready():
-	zoom = Vector2(1.7, 1.7)
+	zoom = Vector2(1, 1)
 	var background = get_node("/root/Main/Background")
 	var tilemaps = [background.get_node("Aqua"), background.get_node("Grass")]
 	

@@ -1,0 +1,238 @@
+[gd_scene load_steps=6 format=3 uid="uid://cegcvo8niitad"]
+
+[ext_resource type="StyleBox" uid="uid://b83luei5ycw1" path="res://Styles/ButtonUPG.tres" id="1_7hflm"]
+[ext_resource type="Script" path="res://Scripts/Machines.gd" id="1_us6u3"]
+[ext_resource type="Texture2D" uid="uid://d4kyvhdi3vegf" path="res://Assets/Coins/MonedaD.png" id="2_qb4x7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j3njg"]
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_5p3ik"]
+font_size = 61
+
+[node name="Machines" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_us6u3")
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.6
+anchor_top = 13.55
+anchor_right = 5.725
+anchor_bottom = 14.75
+offset_left = 24.0
+offset_top = 27.0
+offset_right = 34.0
+offset_bottom = 75.9999
+theme_override_font_sizes/font_size = 50
+text = "Machines"
+
+[node name="MachineBG" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 18.4
+anchor_top = 6.275
+anchor_right = 45.025
+anchor_bottom = 31.4
+offset_left = 19.9999
+offset_top = 9.0
+offset_right = 20.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_j3njg")
+
+[node name="Label" type="Label" parent="Control/MachineBG"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 43.0
+offset_right = 326.0
+offset_bottom = 127.0
+text = "Machine Upgrades
+"
+label_settings = SubResource("LabelSettings_5p3ik")
+
+[node name="ExitButton" type="Button" parent="Control/MachineBG"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.077
+anchor_bottom = 0.035
+offset_left = 939.0
+offset_top = 43.0
+offset_right = 923.995
+offset_bottom = 70.825
+theme_override_font_sizes/font_size = 40
+text = "x"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MachineBG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 179.0
+offset_right = -25.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MachineBG/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CollectionBtn" type="Button" parent="Control/MachineBG/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("1_7hflm")
+text = "    Collector                                                                           "
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/MachineBG/ScrollContainer/VBoxContainer/CollectionBtn"]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 70.0
+offset_right = 153.0
+offset_bottom = 93.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/MachineBG/ScrollContainer/VBoxContainer/CollectionBtn"]
+position = Vector2(551.36, 45.46)
+scale = Vector2(2.42, 2.42)
+texture = ExtResource("2_qb4x7")
+metadata/_edit_lock_ = true
+
+[node name="ShredderBtn" type="Button" parent="Control/MachineBG/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("1_7hflm")
+text = "    Shredder"
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/MachineBG/ScrollContainer/VBoxContainer/ShredderBtn"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/MachineBG/ScrollContainer/VBoxContainer/ShredderBtn"]
+position = Vector2(551.36, 45.46)
+scale = Vector2(2.42, 2.42)
+texture = ExtResource("2_qb4x7")
+metadata/_edit_lock_ = true
+
+[node name="WasherBtn" type="Button" parent="Control/MachineBG/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("1_7hflm")
+text = "    Washer"
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/MachineBG/ScrollContainer/VBoxContainer/WasherBtn"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/MachineBG/ScrollContainer/VBoxContainer/WasherBtn"]
+position = Vector2(551.36, 45.46)
+scale = Vector2(2.42, 2.42)
+texture = ExtResource("2_qb4x7")
+metadata/_edit_lock_ = true
+
+[node name="SorterBtn" type="Button" parent="Control/MachineBG/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("1_7hflm")
+text = "    Seperator"
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/MachineBG/ScrollContainer/VBoxContainer/SorterBtn"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/MachineBG/ScrollContainer/VBoxContainer/SorterBtn"]
+position = Vector2(551.36, 45.46)
+scale = Vector2(2.42, 2.42)
+texture = ExtResource("2_qb4x7")
+metadata/_edit_lock_ = true
+
+[node name="ExtruderBtn" type="Button" parent="Control/MachineBG/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("1_7hflm")
+text = "    Extruder"
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/MachineBG/ScrollContainer/VBoxContainer/ExtruderBtn"]
+layout_mode = 0
+offset_top = 22.0
+offset_right = 40.0
+offset_bottom = 45.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/MachineBG/ScrollContainer/VBoxContainer/ExtruderBtn"]
+position = Vector2(551.36, 45.46)
+scale = Vector2(2.42, 2.42)
+texture = ExtResource("2_qb4x7")
+metadata/_edit_lock_ = true
+
+[node name="MarketBtn" type="Button" parent="Control/MachineBG/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("1_7hflm")
+text = "    Market"
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/MachineBG/ScrollContainer/VBoxContainer/MarketBtn"]
+layout_mode = 0
+offset_top = 22.0
+offset_right = 40.0
+offset_bottom = 45.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/MachineBG/ScrollContainer/VBoxContainer/MarketBtn"]
+position = Vector2(551.36, 45.46)
+scale = Vector2(2.42, 2.42)
+texture = ExtResource("2_qb4x7")
+metadata/_edit_lock_ = true
+
+[node name="Control" type="Control" parent="Control/MachineBG"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control/MachineBG/Control"]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 846.0
+offset_right = 659.0
+offset_bottom = 935.0
+color = Color(0.223529, 0.223529, 0.223529, 0.733333)
+
+[node name="Level" type="Label" parent="Control/MachineBG/Control"]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 867.0
+offset_right = 641.0
+offset_bottom = 890.0
+
+[node name="Effect" type="Label" parent="Control/MachineBG/Control"]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 909.0
+offset_right = 614.0
+offset_bottom = 932.0

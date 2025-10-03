@@ -138,7 +138,7 @@ custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("2_ua8d6")
-text = "  Plastic Per Click Mult"
+text = "  Plastic Per Click Multiplier"
 alignment = 0
 
 [node name="Label2" type="Label" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer/PlasticPerClickMult"]

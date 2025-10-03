@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cqay73esv1cni"]
 
 [ext_resource type="Texture2D" uid="uid://nkuucktai245" path="res://Assets/UI Assets/Refactum Tittle.png" id="1_5pxk1"]
-[ext_resource type="Script" path="res://Scripts/Start Screen.gd" id="1_cc1fh"]
+[ext_resource type="Script" path="res://Scripts/Small Things/Start Screen.gd" id="1_cc1fh"]
 [ext_resource type="Texture2D" uid="uid://b6i5dilsfnpyk" path="res://Assets/UI Assets/Title Background.png" id="2_n6wvh"]
 
 [sub_resource type="Theme" id="Theme_y2afp"]

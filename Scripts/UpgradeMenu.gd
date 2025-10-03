@@ -186,7 +186,6 @@ func show_upgrade_info(upgrade_name: String, button: Button, update_only: bool=f
 	lbl_effect.text = "%.1fx  -->  %.1fx" % [current_effect, next_effect]
 
 	if not update_only:
-		# Only set position when first showing
 		var button_pos = button.get_global_position()
 		var button_size = button.get_size()
 		info_panel.position = button_pos + Vector2(button_size.x + -700, -270)

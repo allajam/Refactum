@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dlh3fs1q8wuxf"]
 
 [ext_resource type="Texture2D" uid="uid://d4kyvhdi3vegf" path="res://Assets/Coins/MonedaD.png" id="1_7k0sv"]
-[ext_resource type="Script" path="res://Scripts/Money'.gd" id="1_ku4uv"]
+[ext_resource type="Script" path="res://Scripts/Small Things/Money'.gd" id="1_ku4uv"]
 
 [sub_resource type="GDScript" id="GDScript_au5go"]
 
