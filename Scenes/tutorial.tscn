@@ -1,8 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://cifi76ikwsc7w"]
+[gd_scene load_steps=5 format=3 uid="uid://cifi76ikwsc7w"]
 
 [ext_resource type="Script" path="res://Tutorial.gd" id="1_8l7kg"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bm1k5"]
+bg_color = Color(0.443137, 0.443137, 0.443137, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_2nwg2"]
+font_size = 30
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_sqb3m"]
+font_size = 20
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Tutorial" type="CanvasLayer"]
 script = ExtResource("1_8l7kg")
@@ -10,18 +24,17 @@ script = ExtResource("1_8l7kg")
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -419.0
-offset_top = 78.9999
-offset_right = -379.0
-offset_bottom = 119.0
-scale = Vector2(1.95, 1.95)
+offset_left = 556.0
+offset_top = 561.0
+offset_right = 596.0
+offset_bottom = 601.0
+scale = Vector2(2, 2)
 
 [node name="PanelContainer" type="PanelContainer" parent="Control"]
 layout_mode = 0
-offset_left = 633.333
-offset_top = 110.256
-offset_right = 1104.33
-offset_bottom = 247.256
+offset_right = 700.0
+offset_bottom = 217.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bm1k5")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer"]
 layout_mode = 2
@@ -29,10 +42,11 @@ layout_mode = 2
 [node name="TutorialTextWelcome" type="Label" parent="Control/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "Welcome to Refactum! "
-label_settings = SubResource("LabelSettings_sqb3m")
+label_settings = SubResource("LabelSettings_2nwg2")
 horizontal_alignment = 1
 
 [node name="TutorialText" type="Label" parent="Control/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(700, 150)
 layout_mode = 2
 text = "This game is a tycoon factory game where your aim is to
     get rid of the pollution and rubbish in the ocean and beach         

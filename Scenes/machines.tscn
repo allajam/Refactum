@@ -1,8 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cegcvo8niitad"]
+[gd_scene load_steps=7 format=3 uid="uid://cegcvo8niitad"]
 
 [ext_resource type="StyleBox" uid="uid://b83luei5ycw1" path="res://Styles/ButtonUPG.tres" id="1_7hflm"]
 [ext_resource type="Script" path="res://Scripts/Machines.gd" id="1_us6u3"]
 [ext_resource type="Texture2D" uid="uid://d4kyvhdi3vegf" path="res://Assets/Coins/MonedaD.png" id="2_qb4x7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jtcyd"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j3njg"]
 border_width_left = 10
@@ -32,10 +37,11 @@ anchor_top = 13.55
 anchor_right = 5.725
 anchor_bottom = 14.75
 offset_left = 24.0
-offset_top = 27.0
-offset_right = 34.0
-offset_bottom = 75.9999
+offset_top = 66.0
+offset_right = 100.0
+offset_bottom = 115.0
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_jtcyd")
 text = "Machines"
 
 [node name="MachineBG" type="Panel" parent="Control"]
@@ -97,125 +103,134 @@ custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("1_7hflm")
-text = "    Collector                                                                           "
+text = "    Collector -  (Collector Speed)                              "
 alignment = 0
 
 [node name="Label" type="Label" parent="Control/MachineBG/ScrollContainer/VBoxContainer/CollectionBtn"]
 layout_mode = 0
-offset_left = 113.0
-offset_top = 70.0
-offset_right = 153.0
-offset_bottom = 93.0
+offset_left = 836.0
+offset_top = 35.0
+offset_right = 1120.0
+offset_bottom = 74.0
+theme_override_font_sizes/font_size = 30
 
 [node name="Sprite2D" type="Sprite2D" parent="Control/MachineBG/ScrollContainer/VBoxContainer/CollectionBtn"]
-position = Vector2(551.36, 45.46)
+position = Vector2(799.36, 54.36)
 scale = Vector2(2.42, 2.42)
 texture = ExtResource("2_qb4x7")
-metadata/_edit_lock_ = true
 
 [node name="ShredderBtn" type="Button" parent="Control/MachineBG/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("1_7hflm")
-text = "    Shredder"
+text = "    Shredder -  (Plastic, now bite-sized)"
 alignment = 0
 
 [node name="Label" type="Label" parent="Control/MachineBG/ScrollContainer/VBoxContainer/ShredderBtn"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 836.0
+offset_top = 35.0
+offset_right = 1088.0
+offset_bottom = 74.0
+theme_override_font_sizes/font_size = 30
 
 [node name="Sprite2D" type="Sprite2D" parent="Control/MachineBG/ScrollContainer/VBoxContainer/ShredderBtn"]
-position = Vector2(551.36, 45.46)
+position = Vector2(799.36, 54.36)
 scale = Vector2(2.42, 2.42)
 texture = ExtResource("2_qb4x7")
-metadata/_edit_lock_ = true
 
 [node name="WasherBtn" type="Button" parent="Control/MachineBG/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("1_7hflm")
-text = "    Washer"
+text = "    Washer - (Now with extra bubbles)"
 alignment = 0
 
 [node name="Label" type="Label" parent="Control/MachineBG/ScrollContainer/VBoxContainer/WasherBtn"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 836.0
+offset_top = 35.0
+offset_right = 1108.0
+offset_bottom = 74.0
+theme_override_font_sizes/font_size = 30
 
 [node name="Sprite2D" type="Sprite2D" parent="Control/MachineBG/ScrollContainer/VBoxContainer/WasherBtn"]
-position = Vector2(551.36, 45.46)
+position = Vector2(799.36, 54.36)
 scale = Vector2(2.42, 2.42)
 texture = ExtResource("2_qb4x7")
-metadata/_edit_lock_ = true
 
 [node name="SorterBtn" type="Button" parent="Control/MachineBG/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("1_7hflm")
-text = "    Seperator"
+text = "    Seperator -  (More Precise Sorting)"
 alignment = 0
 
 [node name="Label" type="Label" parent="Control/MachineBG/ScrollContainer/VBoxContainer/SorterBtn"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 836.0
+offset_top = 35.0
+offset_right = 1045.0
+offset_bottom = 74.0
+theme_override_font_sizes/font_size = 30
 
 [node name="Sprite2D" type="Sprite2D" parent="Control/MachineBG/ScrollContainer/VBoxContainer/SorterBtn"]
-position = Vector2(551.36, 45.46)
+position = Vector2(799.36, 54.36)
 scale = Vector2(2.42, 2.42)
 texture = ExtResource("2_qb4x7")
-metadata/_edit_lock_ = true
 
 [node name="ExtruderBtn" type="Button" parent="Control/MachineBG/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("1_7hflm")
-text = "    Extruder"
+text = "    Extruder -  (Higher Quality Output)"
 alignment = 0
 
 [node name="Label" type="Label" parent="Control/MachineBG/ScrollContainer/VBoxContainer/ExtruderBtn"]
 layout_mode = 0
-offset_top = 22.0
-offset_right = 40.0
-offset_bottom = 45.0
+offset_left = 836.0
+offset_top = 35.0
+offset_right = 1007.0
+offset_bottom = 74.0
+theme_override_font_sizes/font_size = 30
 
 [node name="Sprite2D" type="Sprite2D" parent="Control/MachineBG/ScrollContainer/VBoxContainer/ExtruderBtn"]
-position = Vector2(551.36, 45.46)
+position = Vector2(799.36, 54.36)
 scale = Vector2(2.42, 2.42)
 texture = ExtResource("2_qb4x7")
-metadata/_edit_lock_ = true
 
 [node name="MarketBtn" type="Button" parent="Control/MachineBG/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("1_7hflm")
-text = "    Market"
+text = "    Market - (Plastic never looked so profitable)"
 alignment = 0
 
 [node name="Label" type="Label" parent="Control/MachineBG/ScrollContainer/VBoxContainer/MarketBtn"]
 layout_mode = 0
-offset_top = 22.0
-offset_right = 40.0
-offset_bottom = 45.0
+offset_left = 836.0
+offset_top = 35.0
+offset_right = 1116.0
+offset_bottom = 74.0
+theme_override_font_sizes/font_size = 30
 
 [node name="Sprite2D" type="Sprite2D" parent="Control/MachineBG/ScrollContainer/VBoxContainer/MarketBtn"]
-position = Vector2(551.36, 45.46)
+position = Vector2(799.36, 54.36)
 scale = Vector2(2.42, 2.42)
 texture = ExtResource("2_qb4x7")
-metadata/_edit_lock_ = true
 
-[node name="Control" type="Control" parent="Control/MachineBG"]
+[node name="MachineInfoPanel" type="Control" parent="Control/MachineBG"]
+z_index = 25
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ColorRect" type="ColorRect" parent="Control/MachineBG/Control"]
+[node name="ColorRect" type="ColorRect" parent="Control/MachineBG/MachineInfoPanel"]
 layout_mode = 0
 offset_left = 251.0
 offset_top = 846.0
@@ -223,16 +238,32 @@ offset_right = 659.0
 offset_bottom = 935.0
 color = Color(0.223529, 0.223529, 0.223529, 0.733333)
 
-[node name="Level" type="Label" parent="Control/MachineBG/Control"]
+[node name="Label_Level" type="Label" parent="Control/MachineBG/MachineInfoPanel"]
 layout_mode = 0
 offset_left = 272.0
 offset_top = 867.0
 offset_right = 641.0
 offset_bottom = 890.0
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
 
-[node name="Effect" type="Label" parent="Control/MachineBG/Control"]
+[node name="Label_Effect" type="Label" parent="Control/MachineBG/MachineInfoPanel"]
 layout_mode = 0
-offset_left = 294.0
-offset_top = 909.0
-offset_right = 614.0
-offset_bottom = 932.0
+offset_left = 297.0
+offset_top = 901.0
+offset_right = 617.0
+offset_bottom = 924.0
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="Control/MachineBG/ScrollContainer/VBoxContainer/CollectionBtn" to="Control" method="_on_collection_btn_mouse_entered"]
+[connection signal="mouse_exited" from="Control/MachineBG/ScrollContainer/VBoxContainer/CollectionBtn" to="Control" method="_on_collection_btn_mouse_exited"]
+[connection signal="mouse_entered" from="Control/MachineBG/ScrollContainer/VBoxContainer/ShredderBtn" to="Control" method="_on_shredder_btn_mouse_entered"]
+[connection signal="mouse_exited" from="Control/MachineBG/ScrollContainer/VBoxContainer/ShredderBtn" to="Control" method="_on_shredder_btn_mouse_exited"]
+[connection signal="mouse_entered" from="Control/MachineBG/ScrollContainer/VBoxContainer/WasherBtn" to="Control" method="_on_washer_btn_mouse_entered"]
+[connection signal="mouse_exited" from="Control/MachineBG/ScrollContainer/VBoxContainer/WasherBtn" to="Control" method="_on_washer_btn_mouse_exited"]
+[connection signal="mouse_entered" from="Control/MachineBG/ScrollContainer/VBoxContainer/SorterBtn" to="Control" method="_on_sorter_btn_mouse_entered"]
+[connection signal="mouse_exited" from="Control/MachineBG/ScrollContainer/VBoxContainer/SorterBtn" to="Control" method="_on_sorter_btn_mouse_exited"]
+[connection signal="mouse_entered" from="Control/MachineBG/ScrollContainer/VBoxContainer/ExtruderBtn" to="Control" method="_on_extruder_btn_mouse_entered"]
+[connection signal="mouse_exited" from="Control/MachineBG/ScrollContainer/VBoxContainer/ExtruderBtn" to="Control" method="_on_extruder_btn_mouse_exited"]
+[connection signal="mouse_entered" from="Control/MachineBG/ScrollContainer/VBoxContainer/MarketBtn" to="Control" method="_on_market_btn_mouse_entered"]
+[connection signal="mouse_exited" from="Control/MachineBG/ScrollContainer/VBoxContainer/MarketBtn" to="Control" method="_on_market_btn_mouse_exited"]

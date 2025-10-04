@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://du3re5hwylfon"]
+[gd_scene load_steps=47 format=3 uid="uid://du3re5hwylfon"]
 
 [ext_resource type="Script" path="res://Scripts/Small Things/Main.gd" id="1_idph0"]
 [ext_resource type="PackedScene" uid="uid://djicghqaqc65b" path="res://Scenes/Pause_Menu.tscn" id="2_b6x72"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://3t3a2n1yu8yb" path="res://Scenes/Background.tscn" id="6_6jwcs"]
 [ext_resource type="Texture2D" uid="uid://nfyhodjsulxm" path="res://Assets/Machines/Collection.png" id="8_3ttpl"]
 [ext_resource type="Texture2D" uid="uid://krum5u7rwuq1" path="res://Assets/Machines/Washer-removebg-preview.png" id="9_el6xc"]
+[ext_resource type="Texture2D" uid="uid://b6is2tjjge7lq" path="res://Assets/Machines/Highlight Border.png" id="9_pfnbm"]
 [ext_resource type="Texture2D" uid="uid://dk5vk1jxlh214" path="res://Assets/Machines/Sorter_machine-removebg-preview.png" id="10_546jx"]
 [ext_resource type="Texture2D" uid="uid://g77cqhs03qvc" path="res://Assets/Machines/Grinder_Machine-removebg-preview.png" id="10_kw2yr"]
 [ext_resource type="Script" path="res://Scripts/Conveyer's.gd" id="10_pwvml"]
@@ -31,21 +32,61 @@
 [ext_resource type="Script" path="res://Scripts/NotEnoughMoneyBanner.gd" id="26_28v35"]
 [ext_resource type="PackedScene" uid="uid://cifi76ikwsc7w" path="res://Scenes/tutorial.tscn" id="27_meswv"]
 [ext_resource type="PackedScene" uid="uid://cegcvo8niitad" path="res://Scenes/machines.tscn" id="31_ilnpn"]
+[ext_resource type="Script" path="res://Scenes/main_machine_upgrade.gd" id="33_rdao1"]
 
 [sub_resource type="GDScript" id="GDScript_3tnyf"]
 script/source = "extends Area2D
 
-@onready var hover_border2 = $HoverBorder
 
-func _ready():
-	pass
-	
+func _ready() -> void:
+	# Connect signals
+	mouse_entered.connect(_on_mouse_entered)
+	mouse_exited.connect(_on_mouse_exited)
+
+
+func _on_mouse_entered() -> void:
+	# Show all direct Sprite2D children named \"Border\" or \"Border2\"
+	for child in get_children():
+		if child is Sprite2D and child.name.begins_with(\"HighlightBorder\"):
+			child.visible = true
+
+func _on_mouse_exited() -> void:
+	# Hide them again
+	for child in get_children():
+		if child is Sprite2D and child.name.begins_with(\"HighlightBorder\"):
+			child.visible = false
+
+
+
+
+
+
+
 "
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hg7e4"]
-size = Vector2(95, 100)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wvc26"]
+size = Vector2(92.0415, 103.114)
 
 [sub_resource type="GDScript" id="GDScript_0cj7v"]
+script/source = "extends CollisionShape2D
+func _ready() -> void:
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtwip"]
+size = Vector2(136.332, 82.3529)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_igkyo"]
+size = Vector2(208.997, 79.5847)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6vjow"]
+size = Vector2(214.254, 178.547)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxqlp"]
+size = Vector2(94.8097, 153.633)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a32q7"]
+size = Vector2(169.003, 161.246)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_om4rj"]
 atlas = ExtResource("11_eg1hu")
@@ -108,26 +149,40 @@ script = ExtResource("5_rxp1t")
 position = Vector2(-351, -135)
 scale = Vector2(1.445, 1.445)
 
-[node name="PlasCollection" type="Area2D" parent="Machines"]
+[node name="Collector" type="Area2D" parent="Machines"]
 script = SubResource("GDScript_3tnyf")
 
-[node name="Collection" type="Sprite2D" parent="Machines/PlasCollection"]
+[node name="HighlightBorder" type="Sprite2D" parent="Machines/Collector"]
+visible = false
+z_index = 5
+position = Vector2(795.156, 323.875)
+scale = Vector2(1.73702, 1.87543)
+texture = ExtResource("9_pfnbm")
+
+[node name="Asset" type="Sprite2D" parent="Machines/Collector"]
 position = Vector2(792, 323)
 scale = Vector2(1.8, 1.8)
 texture = ExtResource("8_3ttpl")
 region_enabled = true
 region_rect = Rect2(46.6618, 16.03, 53.3382, 66.8861)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Machines/PlasCollection"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machines/Collector"]
 visible = false
-position = Vector2(791.5, 322)
-shape = SubResource("RectangleShape2D_hg7e4")
+position = Vector2(790.657, 321.453)
+shape = SubResource("RectangleShape2D_wvc26")
 script = SubResource("GDScript_0cj7v")
 
 [node name="Shredder" type="Area2D" parent="Machines"]
 script = SubResource("GDScript_3tnyf")
 
-[node name="Collection" type="Sprite2D" parent="Machines/Shredder"]
+[node name="HighlightBorder" type="Sprite2D" parent="Machines/Shredder"]
+visible = false
+z_index = 5
+position = Vector2(580.969, 321.453)
+scale = Vector2(2.51211, -1.48789)
+texture = ExtResource("9_pfnbm")
+
+[node name="Asset" type="Sprite2D" parent="Machines/Shredder"]
 position = Vector2(578, 321)
 scale = Vector2(0.32, 0.32)
 texture = ExtResource("10_kw2yr")
@@ -136,14 +191,21 @@ region_rect = Rect2(46.6618, 16.03, 484.088, 361.22)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Machines/Shredder"]
 visible = false
-position = Vector2(791.5, 322)
-shape = SubResource("RectangleShape2D_hg7e4")
+position = Vector2(578.201, 322.145)
+shape = SubResource("RectangleShape2D_dtwip")
 script = SubResource("GDScript_0cj7v")
 
 [node name="Washer" type="Area2D" parent="Machines"]
 script = SubResource("GDScript_3tnyf")
 
-[node name="Collection" type="Sprite2D" parent="Machines/Washer"]
+[node name="HighlightBorder" type="Sprite2D" parent="Machines/Washer"]
+visible = false
+z_index = 5
+position = Vector2(304.844, 324.221)
+scale = Vector2(3.89619, 1.47405)
+texture = ExtResource("9_pfnbm")
+
+[node name="Asset" type="Sprite2D" parent="Machines/Washer"]
 position = Vector2(291, 329)
 scale = Vector2(0.505, 0.505)
 texture = ExtResource("9_el6xc")
@@ -152,14 +214,26 @@ region_rect = Rect2(46.6618, 16.03, 484.088, 361.22)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Machines/Washer"]
 visible = false
-position = Vector2(791.5, 322)
-shape = SubResource("RectangleShape2D_hg7e4")
+position = Vector2(296.194, 323.529)
+shape = SubResource("RectangleShape2D_igkyo")
 script = SubResource("GDScript_0cj7v")
 
 [node name="Sorter" type="Area2D" parent="Machines"]
 script = SubResource("GDScript_3tnyf")
 
-[node name="Collection" type="Sprite2D" parent="Machines/Sorter"]
+[node name="HighlightBorder" type="Sprite2D" parent="Machines/Sorter"]
+visible = false
+position = Vector2(-53.9792, 325.606)
+scale = Vector2(2.43599, 3.21799)
+texture = ExtResource("9_pfnbm")
+
+[node name="HighlightBorder2" type="Sprite2D" parent="Machines/Sorter"]
+visible = false
+position = Vector2(34.9481, 326.644)
+scale = Vector2(1.95848, 1.78547)
+texture = ExtResource("9_pfnbm")
+
+[node name="Asset" type="Sprite2D" parent="Machines/Sorter"]
 position = Vector2(-12, 321)
 scale = Vector2(0.505, 0.505)
 texture = ExtResource("10_546jx")
@@ -168,35 +242,42 @@ region_rect = Rect2(46.6618, 16.03, 484.088, 394.47)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Machines/Sorter"]
 visible = false
-position = Vector2(791.5, 322)
-shape = SubResource("RectangleShape2D_hg7e4")
+position = Vector2(-22.0058, 322.491)
+shape = SubResource("RectangleShape2D_6vjow")
 script = SubResource("GDScript_0cj7v")
 
 [node name="Extruder" type="Area2D" parent="Machines"]
 script = SubResource("GDScript_3tnyf")
 
-[node name="Collection" type="Sprite2D" parent="Machines/Extruder"]
+[node name="HighlightBorder" type="Sprite2D" parent="Machines/Extruder"]
+visible = false
+z_index = 5
+position = Vector2(-265.744, 325.259)
+scale = Vector2(1.70242, 2.65744)
+texture = ExtResource("9_pfnbm")
+
+[node name="Asset" type="Sprite2D" parent="Machines/Extruder"]
 position = Vector2(-271.28, 265.744)
 scale = Vector2(0.246814, 0.198666)
 texture = ExtResource("12_0fybe")
 region_enabled = true
 region_rect = Rect2(46.6618, 150.479, 438.734, 210.744)
 
-[node name="Collection2" type="Sprite2D" parent="Machines/Extruder"]
+[node name="Asset2" type="Sprite2D" parent="Machines/Extruder"]
 position = Vector2(-271.28, 347.405)
 scale = Vector2(0.246814, 0.198666)
 texture = ExtResource("12_0fybe")
 region_enabled = true
 region_rect = Rect2(46.6618, 150.479, 438.734, 210.744)
 
-[node name="Collection3" type="Sprite2D" parent="Machines/Extruder"]
+[node name="Asset3" type="Sprite2D" parent="Machines/Extruder"]
 position = Vector2(-271.28, 306.574)
 scale = Vector2(0.246814, 0.198666)
 texture = ExtResource("12_0fybe")
 region_enabled = true
 region_rect = Rect2(46.6618, 150.479, 438.734, 210.744)
 
-[node name="Collection4" type="Sprite2D" parent="Machines/Extruder"]
+[node name="Asset4" type="Sprite2D" parent="Machines/Extruder"]
 position = Vector2(-271.28, 382.007)
 scale = Vector2(0.246814, 0.198666)
 texture = ExtResource("12_0fybe")
@@ -205,14 +286,21 @@ region_rect = Rect2(46.6618, 150.479, 438.734, 210.744)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Machines/Extruder"]
 visible = false
-position = Vector2(791.5, 322)
-shape = SubResource("RectangleShape2D_hg7e4")
+position = Vector2(-267.474, 320.415)
+shape = SubResource("RectangleShape2D_dxqlp")
 script = SubResource("GDScript_0cj7v")
 
 [node name="Sell" type="Area2D" parent="Machines"]
 script = SubResource("GDScript_3tnyf")
 
-[node name="Collection" type="Sprite2D" parent="Machines/Sell"]
+[node name="HighlightBorder" type="Sprite2D" parent="Machines/Sell"]
+visible = false
+z_index = 5
+position = Vector2(-493.772, 325.952)
+scale = Vector2(3.13495, 2.90657)
+texture = ExtResource("9_pfnbm")
+
+[node name="Asset" type="Sprite2D" parent="Machines/Sell"]
 position = Vector2(-522.491, 338.408)
 scale = Vector2(0.525227, 0.52915)
 texture = ExtResource("11_wvfj1")
@@ -221,17 +309,17 @@ region_rect = Rect2(46.6618, 16.03, 417.779, 394.47)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Machines/Sell"]
 visible = false
-position = Vector2(791.5, 322)
-shape = SubResource("RectangleShape2D_hg7e4")
+position = Vector2(-497.505, 321.453)
+shape = SubResource("RectangleShape2D_a32q7")
 script = SubResource("GDScript_0cj7v")
 
 [node name="Machine Labels" type="Node2D" parent="Machines"]
 
 [node name="Collector" type="Label" parent="Machines/Machine Labels"]
-offset_left = 751.557
-offset_top = 235.294
-offset_right = 791.557
-offset_bottom = 258.294
+offset_left = 759.169
+offset_top = 240.83
+offset_right = 828.169
+offset_bottom = 263.83
 text = "Collector"
 
 [node name="Shredder" type="Label" parent="Machines/Machine Labels"]
@@ -249,10 +337,10 @@ offset_bottom = 276.979
 text = "Washer"
 
 [node name="Separator" type="Label" parent="Machines/Machine Labels"]
-offset_left = -85.1211
-offset_top = 195.848
-offset_right = -8.12111
-offset_bottom = 218.848
+offset_left = -96.1938
+offset_top = 204.152
+offset_right = -19.1938
+offset_bottom = 227.152
 text = "Separator"
 
 [node name="Extruder" type="Label" parent="Machines/Machine Labels"]
@@ -263,10 +351,10 @@ offset_bottom = 242.377
 text = "Extruder"
 
 [node name="Sell" type="Label" parent="Machines/Machine Labels"]
-offset_left = -510.727
-offset_top = 217.301
-offset_right = -470.727
-offset_bottom = 240.301
+offset_left = -522.491
+offset_top = 215.225
+offset_right = -466.491
+offset_bottom = 238.225
 text = "Market"
 
 [node name="Conveyer\'s" type="Node2D" parent="."]
@@ -321,28 +409,24 @@ position = Vector2(-174, 385)
 sprite_frames = SubResource("SpriteFrames_wetri")
 animation = &"Conveyer Belt"
 autoplay = "Conveyer Belt"
-metadata/_edit_lock_ = true
 
 [node name="Conveyer Belt5" type="AnimatedSprite2D" parent="Conveyer\'s"]
 position = Vector2(-174, 350)
 sprite_frames = SubResource("SpriteFrames_wetri")
 animation = &"Conveyer Belt"
 autoplay = "Conveyer Belt"
-metadata/_edit_lock_ = true
 
 [node name="Conveyer Belt6" type="AnimatedSprite2D" parent="Conveyer\'s"]
 position = Vector2(-174, 309)
 sprite_frames = SubResource("SpriteFrames_wetri")
 animation = &"Conveyer Belt"
 autoplay = "Conveyer Belt"
-metadata/_edit_lock_ = true
 
 [node name="Conveyer Belt7" type="AnimatedSprite2D" parent="Conveyer\'s"]
 position = Vector2(-174, 268)
 sprite_frames = SubResource("SpriteFrames_wetri")
 animation = &"Conveyer Belt"
 autoplay = "Conveyer Belt"
-metadata/_edit_lock_ = true
 
 [node name="FloatPlastic" type="Node2D" parent="."]
 script = ExtResource("12_3vlp0")
@@ -506,23 +590,24 @@ region_rect = Rect2(41.334, 34.4669, 15.3698, 15.3697)
 [node name="UI" type="Node2D" parent="."]
 
 [node name="Tutorial" parent="UI" instance=ExtResource("27_meswv")]
+visible = false
 
 [node name="Tasks" parent="UI" instance=ExtResource("24_ef580")]
 visible = false
 
-[node name="Upgrades" parent="." instance=ExtResource("25_3y3vt")]
+[node name="Upgrades" parent="UI" instance=ExtResource("25_3y3vt")]
 
-[node name="Banner" type="CanvasLayer" parent="."]
+[node name="Banner" type="CanvasLayer" parent="UI"]
 layer = 10
 
-[node name="NotEnoughMoneyBanner" type="Control" parent="Banner"]
+[node name="NotEnoughMoneyBanner" type="Control" parent="UI/Banner"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("26_28v35")
 
-[node name="Label" type="Label" parent="Banner/NotEnoughMoneyBanner"]
+[node name="Label" type="Label" parent="UI/Banner/NotEnoughMoneyBanner"]
 z_index = 330
 layout_mode = 0
 offset_left = 1023.0
@@ -533,7 +618,7 @@ theme_override_colors/font_color = Color(0.686275, 0, 0, 0.862745)
 theme_override_font_sizes/font_size = 50
 text = "You Can't Afford This!"
 
-[node name="ColorRect" type="ColorRect" parent="Banner/NotEnoughMoneyBanner"]
+[node name="ColorRect" type="ColorRect" parent="UI/Banner/NotEnoughMoneyBanner"]
 z_index = 15
 layout_mode = 0
 offset_left = 928.0
@@ -542,4 +627,5 @@ offset_right = 1776.0
 offset_bottom = 196.0
 color = Color(0.152941, 0.152941, 0.152941, 0.917647)
 
-[node name="Machines2" parent="." instance=ExtResource("31_ilnpn")]
+[node name="Machines_Upgrades" parent="UI" instance=ExtResource("31_ilnpn")]
+script = ExtResource("33_rdao1")

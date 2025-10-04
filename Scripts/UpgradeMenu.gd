@@ -108,7 +108,7 @@ func buy_upgrade(upgrade_name: String):
 		# Update the cost labels on the buttons
 		update_upgrade_cost_labels()
 	else:
-		var banner = get_tree().root.get_node("Main/Banner/NotEnoughMoneyBanner")
+		var banner = get_tree().root.get_node("Main/UI/Banner/NotEnoughMoneyBanner")
 		banner.show_banner("Not enough gold! Cost: " + str(cost))
 
 

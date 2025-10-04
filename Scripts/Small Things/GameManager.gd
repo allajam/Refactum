@@ -14,35 +14,35 @@ var plastic_per_click: int = 5   # starting value
 
 
 ##Below for Machine upgrades
+# Machines dictionary: each machine has a level
 var machines = {
-	"Collector": {
-		"level": 0,
-		"base_cost": 100,
-		"cost_multiplier": 1.5,
-		"base_production": 5,
-		"production_multiplier": 1.2
-	},
-	"Shredder": {
-		"level": 0,
-		"base_cost": 500,
-		"cost_multiplier": 1.5,
-		"base_production": 15,
-		"production_multiplier": 1.3
-	},
-	"Washer": {
-		"level": 0,
-		"base_cost": 1500,
-		"cost_multiplier": 1.6,
-		"base_production": 40,
-		"production_multiplier": 1.25
-	}
+	"Collector": {"level": 0, "base_gold": 1},
+	"Shredder":  {"level": 0, "base_gold": 2},
+	"Washer":    {"level": 0, "base_gold": 3},
+	"Sorter":    {"level": 0, "base_gold": 4},
+	"Extruder":  {"level": 0, "base_gold": 5},
+	"Market":    {"level": 0, "base_gold": 6},
 }
-func get_upgrade_cost(machine_name: String) -> int:
-	var m = machines[machine_name]
-	return int(m.base_cost * pow(m.cost_multiplier, m.level))
 
-func get_production(machine_name: String) -> float:
-	var m = machines[machine_name]
-	if m.level == 0:
-		return 0
-	return m.base_production * pow(m.production_multiplier, m.level - 1)
+# Base costs for machines (at level 0)
+var base_costs = {
+	"Collector": 100,
+	"Shredder":  200,
+	"Washer":    300,
+	"Sorter":    400,
+	"Extruder":  500,
+	"Market":    600,
+}
+
+# Multipliers for machine upgrades
+var multipliers = {
+	"Collector": 1.2,
+	"Shredder":  1.3,
+	"Washer":    1.35,
+	"Sorter":    1.4,
+	"Extruder":  1.45,
+	"Market":    1.5,
+}
+
+
+

@@ -37,3 +37,27 @@ offset_right = -1.20007
 offset_bottom = -0.400009
 theme_override_font_sizes/font_size = 40
 script = SubResource("GDScript_au5go")
+
+[node name="GPS_Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.028
+anchor_right = 0.043
+anchor_bottom = 0.044
+offset_left = -63.68
+offset_top = 91.0
+offset_right = -73.08
+offset_bottom = 89.6
+theme_override_font_sizes/font_size = 50
+text = "Gold/Sec = "
+
+[node name="GPS_Amount" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.028
+anchor_right = 0.043
+anchor_bottom = 0.044
+offset_left = -63.68
+offset_top = 91.0
+offset_right = -73.08
+offset_bottom = 89.6
+theme_override_font_sizes/font_size = 50
+text = "Gold/Sec = "

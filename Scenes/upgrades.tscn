@@ -1,10 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://ddxtmt050j0bb"]
+[gd_scene load_steps=10 format=3 uid="uid://ddxtmt050j0bb"]
 
 [ext_resource type="Script" path="res://Scripts/UpgradeMenu.gd" id="1_qv8gm"]
 [ext_resource type="StyleBox" uid="uid://b83luei5ycw1" path="res://Styles/ButtonUPG.tres" id="2_ua8d6"]
 [ext_resource type="Texture2D" uid="uid://d4kyvhdi3vegf" path="res://Assets/Coins/MonedaD.png" id="3_jqepm"]
 
 [sub_resource type="Theme" id="Theme_fwyc1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7iakq"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2flmq"]
 border_width_left = 10
@@ -52,6 +57,7 @@ offset_top = -6.10352e-05
 offset_bottom = -7.00006
 theme = SubResource("Theme_fwyc1")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_7iakq")
 text = "Upgrades"
 
 [node name="UpgradeBG" type="Panel" parent="Control"]
@@ -122,14 +128,14 @@ alignment = 0
 
 [node name="Label" type="Label" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer/PlasticPerClick"]
 layout_mode = 2
-offset_left = 638.0
+offset_left = 818.0
 offset_top = 26.0
-offset_right = 1638.0
+offset_right = 1818.0
 offset_bottom = 81.0
 theme_override_font_sizes/font_size = 30
 
 [node name="MonedaD" type="Sprite2D" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer/PlasticPerClick"]
-position = Vector2(616.36, 45.36)
+position = Vector2(780.36, 45.36)
 scale = Vector2(2.42, 2.42)
 texture = ExtResource("3_jqepm")
 
@@ -143,14 +149,14 @@ alignment = 0
 
 [node name="Label2" type="Label" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer/PlasticPerClickMult"]
 layout_mode = 2
-offset_left = 638.0
+offset_left = 818.0
 offset_top = 25.0
-offset_right = 1638.0
+offset_right = 1818.0
 offset_bottom = 80.0
 theme_override_font_sizes/font_size = 30
 
 [node name="MonedaD2" type="Sprite2D" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer/PlasticPerClickMult"]
-position = Vector2(616.36, 39.36)
+position = Vector2(780.36, 39.36)
 scale = Vector2(2.42, 2.42)
 texture = ExtResource("3_jqepm")
 
@@ -164,14 +170,14 @@ alignment = 0
 
 [node name="Label3" type="Label" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer/IncomePerRecycle"]
 layout_mode = 2
-offset_left = 638.0
+offset_left = 818.0
 offset_top = 25.0
-offset_right = 1638.0
+offset_right = 1818.0
 offset_bottom = 80.0
 theme_override_font_sizes/font_size = 30
 
 [node name="MonedaD3" type="Sprite2D" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer/IncomePerRecycle"]
-position = Vector2(616.36, 46.36)
+position = Vector2(780.36, 46.36)
 scale = Vector2(2.42, 2.42)
 texture = ExtResource("3_jqepm")
 
@@ -185,14 +191,14 @@ alignment = 0
 
 [node name="Label4" type="Label" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer/MachineWorkSpeed"]
 layout_mode = 2
-offset_left = 638.0
+offset_left = 818.0
 offset_top = 27.0
-offset_right = 1638.0
+offset_right = 1818.0
 offset_bottom = 82.0
 theme_override_font_sizes/font_size = 30
 
 [node name="MonedaD4" type="Sprite2D" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer/MachineWorkSpeed"]
-position = Vector2(616.36, 47.36)
+position = Vector2(780.36, 47.36)
 scale = Vector2(2.42, 2.42)
 texture = ExtResource("3_jqepm")
 
@@ -206,14 +212,14 @@ alignment = 0
 
 [node name="Label5" type="Label" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer/GoldenPlasChance"]
 layout_mode = 2
-offset_left = 638.0
+offset_left = 818.0
 offset_top = 42.0
-offset_right = 1638.0
-offset_bottom = 65.0
+offset_right = 1818.0
+offset_bottom = 84.0
 theme_override_font_sizes/font_size = 30
 
 [node name="MonedaD5" type="Sprite2D" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer/GoldenPlasChance"]
-position = Vector2(616.36, 54.36)
+position = Vector2(780.36, 54.36)
 scale = Vector2(2.42, 2.42)
 texture = ExtResource("3_jqepm")
 
@@ -227,14 +233,14 @@ alignment = 0
 
 [node name="Label6" type="Label" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer/GoldenPlasAmount"]
 layout_mode = 2
-offset_left = 638.0
+offset_left = 818.0
 offset_top = 31.0
-offset_right = 1638.0
+offset_right = 1818.0
 offset_bottom = 73.0
 theme_override_font_sizes/font_size = 30
 
 [node name="MonedaD6" type="Sprite2D" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer/GoldenPlasAmount"]
-position = Vector2(616.36, 54.36)
+position = Vector2(780.36, 54.36)
 scale = Vector2(2.42, 2.42)
 texture = ExtResource("3_jqepm")
 

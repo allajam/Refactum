@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var pause_menu = $PauseMenu 
 
+
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		if pause_menu.visible:
@@ -12,7 +13,14 @@ func _input(event):
 		AudioManager.play_click()
 		GameManager.conveyor_active = true  # Start
 		
+	
+		
 
 func _ready():
 	global_gold.money = 500
 	$"Splash screen".visible = true
+	
+
+
+
+

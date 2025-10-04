@@ -10,8 +10,8 @@ var pages = [
 	   You left click to interact and to reach the pause menu you
 	   can press Escape 
 	",
-	"  To Start you must collect plastic from the Ocean to 
-	   your right, you will earn Money from this.                                  
+	"  To Start you must collect plastic from the Ocean (Click It)
+	   to your right, you will earn Money from this.                                  
 	",
 	"  With this money you can spend it on different things
 	   such as new Machines and Upgrades                                       
