@@ -12,6 +12,7 @@ func deduct_coins(amount: int) -> void:
 var conveyor_active = false
 var plastic_per_click: int = 5   # starting value
 
+var gps_multiplier: float = 1.0
 
 
 

@@ -42,13 +42,14 @@ func get_total_gold_per_sec() -> float:
 	var total = 0.0
 	for machine_name in machines.keys():
 		total += get_machine_gold_per_sec(machine_name)
-	return total
+	return total * GameManager.gps_multiplier
+
 
 
 func _process(delta):
 	var total_gold_per_sec = get_total_gold_per_sec()
 	global_gold.money += total_gold_per_sec * delta
-	print("Gold/sec:", total_gold_per_sec, "| Current gold:", global_gold.money)
+	
 	var gps = get_total_gold_per_sec()
 	gps_label.text = "%.1f" % gps
 

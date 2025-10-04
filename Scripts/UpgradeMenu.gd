@@ -110,6 +110,13 @@ func buy_upgrade(upgrade_name: String):
 	else:
 		var banner = get_tree().root.get_node("Main/UI/Banner/NotEnoughMoneyBanner")
 		banner.show_banner("Not enough gold! Cost: " + str(cost))
+		
+	if upgrade_name == "income_per_plastic":
+		GameManager.gps_multiplier += 0.1  # +10% income per level
+		print("GPS Multiplier increased to:", GameManager.gps_multiplier)
+	elif upgrade_name == "machine_speed":
+		GameManager.gps_multiplier += 0.05  # +5% income per level
+		print("GPS Multiplier increased to:", GameManager.gps_multiplier)
 
 
 
@@ -161,7 +168,7 @@ func update_upgrade_cost_labels():
 ###INFOPANEL Code:
 var current_hovered_button: Button = null
 var current_hovered_upgrade: String = ""
-
+ 
 func show_upgrade_info(upgrade_name: String, button: Button, update_only: bool=false):
 	current_hovered_upgrade = upgrade_name
 	current_hovered_button = button
@@ -181,10 +188,12 @@ func show_upgrade_info(upgrade_name: String, button: Button, update_only: bool=f
 	else:
 		current_effect = level * upgrade.get("effect_per_level", 1)
 		next_effect = (level + 1) * upgrade.get("effect_per_level", 1)
-
+	
+	
+	
 	lbl_level.text = "Level %d  -->  Level %d" % [level, level + 1]
 	lbl_effect.text = "%.1fx  -->  %.1fx" % [current_effect, next_effect]
-
+	
 	if not update_only:
 		var button_pos = button.get_global_position()
 		var button_size = button.get_size()
