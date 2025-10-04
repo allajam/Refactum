@@ -1,4 +1,5 @@
 # Global.gd
 extends Node
 
-var money: int = 0
+var money: float = 0
+

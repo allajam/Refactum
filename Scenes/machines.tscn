@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cegcvo8niitad"]
+[gd_scene load_steps=8 format=3 uid="uid://cegcvo8niitad"]
 
 [ext_resource type="StyleBox" uid="uid://b83luei5ycw1" path="res://Styles/ButtonUPG.tres" id="1_7hflm"]
 [ext_resource type="Script" path="res://Scripts/Machines.gd" id="1_us6u3"]
+[ext_resource type="Script" path="res://Scenes/GPS Amount.gd" id="2_nri0d"]
 [ext_resource type="Texture2D" uid="uid://d4kyvhdi3vegf" path="res://Assets/Coins/MonedaD.png" id="2_qb4x7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jtcyd"]
@@ -28,6 +29,24 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_us6u3")
+
+[node name="GPS Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 111.0
+offset_right = 199.0
+offset_bottom = 178.0
+theme_override_font_sizes/font_size = 30
+text = "Gold / Sec = "
+
+[node name="GPS_Amount" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 189.0
+offset_top = 107.0
+offset_right = 378.0
+offset_bottom = 174.0
+theme_override_font_sizes/font_size = 30
+script = ExtResource("2_nri0d")
 
 [node name="Button" type="Button" parent="Control"]
 layout_mode = 1
