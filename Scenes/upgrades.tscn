@@ -207,7 +207,7 @@ custom_minimum_size = Vector2(1000, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_41vdh")
-text = "  Golden Plastic Chance (100 Gold)"
+text = "  Golden Plastic Chance"
 alignment = 0
 
 [node name="Label5" type="Label" parent="Control/UpgradeBG/ScrollContainer/VBoxContainer/GoldenPlasChance"]

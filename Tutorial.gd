@@ -16,9 +16,13 @@ var pages = [
 	"  With this money you can spend it on different things
 	   such as new Machines and Upgrades                                       
 	",
+	"  Ocassionally Golden plastic will spawn, this is worth 10x the
+	   the current plastic value, you can upgrade this in the upgrades. 
+	   You can also upgrade its spawn chance.                                       
+	",
 	"  The process of recycling plastic as shown here is simplified
 	   However it is realistic, if you want to find out more about this
-	   have a look in the help settings                                
+	   have a look in the help and info section in the settings                                
 	", 
 	"  Good luck!                                                     
 	",

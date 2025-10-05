@@ -52,9 +52,32 @@ func _on_upgrade_button_pressed():
 
 func show_not_enough_money_banner(cost):
 	# Get the banner node
-	var banner = get_tree().root.get_node("Main/UI_Layer/NotEnoughMoneyBanner")
+	var banner = get_tree().root.get_node("Main/UI/Banner/NotEnoughMoneyBanner")
 	# Call the function on it
 	banner.show_banner("Not enough gold! Cost: " + str(cost))
+	
+##Upgrades 3 and 4
+func _on_golden_plas_chance_pressed():
+	buy_upgrade("golden_plastic_chance")
+	if global_gold.money >= get_upgrade_cost("golden_plastic_chance"):
+		global_gold.money -= get_upgrade_cost("golden_plastic_chance")
+		upgrades["golden_plastic_chance"]["level"] += 1
+		GameManager.golden_spawn_interval = max(
+			1.0, 20.0 - 2.0 * upgrades["golden_plastic_chance"]["level"]
+		)
+		update_upgrade_cost_labels()
+	else:
+		show_not_enough_money_banner(get_upgrade_cost("golden_plastic_chance"))
+
+func _on_golden_plas_amount_pressed():
+	buy_upgrade("golden_plastic_amount")
+	if global_gold.money >= get_upgrade_cost("golden_plastic_amount"):
+		global_gold.money -= get_upgrade_cost("golden_plastic_amount")
+		upgrades["golden_plastic_amount"]["level"] += 1
+		GameManager.golden_multiplier = 10.0 + 2.0 * upgrades["golden_plastic_amount"]["level"]
+		update_upgrade_cost_labels()
+	else:
+		show_not_enough_money_banner(get_upgrade_cost("golden_plastic_amount"))
 
 
 
@@ -82,12 +105,12 @@ var upgrades = {
 	"golden_plastic_chance": {
 		"level": 0,
 		"base_cost": 500,
-		"multiplier": 1.5
+		"multiplier": 1.4
 	},
 	"golden_plastic_amount": {
 		"level": 0,
-		"base_cost": 1000,
-		"multiplier": 1.6
+		"base_cost": 500,
+		"multiplier": 1.4
 	}
 }
 
@@ -131,12 +154,6 @@ func _on_income_per_recycle_pressed():
 
 func _on_machine_work_speed_pressed():
 	buy_upgrade("machine_speed")
-
-func _on_golden_plas_chance_pressed():
-	buy_upgrade("golden_plastic_chance")
-
-func _on_golden_plas_amount_pressed():
-	buy_upgrade("golden_plastic_amount")
 
 
 

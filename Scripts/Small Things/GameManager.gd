@@ -16,6 +16,13 @@ var gps_multiplier: float = 1.0
 
 
 
+# Golden plastic upgrades
+var golden_spawn_interval: float = 40.0
+var golden_spawn_reduction_per_level: float = 3.0
+var golden_spawn_level: int = 0
 
+var golden_multiplier: float = 10.0
+var golden_multiplier_per_level: float = 10.0
+var golden_amount_level: int = 0
 
 

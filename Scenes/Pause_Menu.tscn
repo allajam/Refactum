@@ -1,12 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://djicghqaqc65b"]
+[gd_scene load_steps=4 format=3 uid="uid://djicghqaqc65b"]
 
 [ext_resource type="Script" path="res://Scripts/Pause_Menu.gd" id="1_q3mxd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ix3jn"]
+content_margin_left = 20.0
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6lkqf"]
+content_margin_left = 20.0
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
 
 [node name="CanvasLayer" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_q3mxd")
 
-[node name="Control" type="Control" parent="."]
+[node name="PauseMenu" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,7 +22,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
+[node name="ColorRect" type="ColorRect" parent="PauseMenu"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,7 +31,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.360784)
 
-[node name="Resume_But" type="Button" parent="Control"]
+[node name="Resume_But" type="Button" parent="PauseMenu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.4
@@ -37,7 +45,7 @@ theme_override_font_sizes/font_size = 55
 action_mode = 0
 text = "Resume"
 
-[node name="Settinges_But" type="Button" parent="Control"]
+[node name="Settinges_But" type="Button" parent="PauseMenu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.4
@@ -51,7 +59,7 @@ offset_bottom = -6.10352e-05
 theme_override_font_sizes/font_size = 55
 text = "Settings"
 
-[node name="Help_But" type="Button" parent="Control"]
+[node name="Help_But" type="Button" parent="PauseMenu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.4
@@ -63,9 +71,9 @@ offset_top = -3.0
 offset_right = -0.0205078
 offset_bottom = 0.19989
 theme_override_font_sizes/font_size = 55
-text = "Help"
+text = "Help & Info"
 
-[node name="Quit_But" type="Button" parent="Control"]
+[node name="Quit_But" type="Button" parent="PauseMenu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.4
@@ -80,7 +88,7 @@ theme_override_font_sizes/font_size = 55
 text = "Save & Exit
 "
 
-[node name="TEXT" type="Label" parent="Control"]
+[node name="TEXT" type="Label" parent="PauseMenu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.364
@@ -93,4 +101,104 @@ offset_right = 0.879883
 theme_override_font_sizes/font_size = 87
 text = "Game Paused"
 
-[connection signal="pressed" from="Control/Resume_But" to="." method="_on_resume_but_pressed"]
+[node name="HelpMenu" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TabContainer" type="TabContainer" parent="HelpMenu"]
+process_mode = 3
+z_index = 100
+layout_mode = 0
+offset_left = 556.0
+offset_top = 286.0
+offset_right = 1856.0
+offset_bottom = 1227.0
+mouse_filter = 0
+theme_override_constants/side_margin = 5
+theme_override_font_sizes/font_size = 40
+clip_tabs = false
+all_tabs_in_front = true
+
+[node name="Recycling Process" type="RichTextLabel" parent="HelpMenu/TabContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_ix3jn")
+bbcode_enabled = true
+text = "
+[b]Plastic Recycling: The Real Process[/b]
+Every year, around 11 million metric tons of plastic enter the ocean, threatening more than 800 marine species through entanglement, ingestion, and habitat destruction. Studies show that over 90% of seabirds and 52% of sea turtles have ingested plastic. This game aims to raise awareness of these issues by showing players that even small-scale efforts, like cleaning a river, can make a measurable difference in protecting marine life.
+Plastic recycling is one of the most important ways we can reduce pollution and protect the environment. It helps prevent plastic waste from ending up in landfills or the ocean, and saves energy by reusing existing materials instead of making new ones.
+
+[b]Collection[/b]
+The recycling process starts when used plastic is gathered from the environment or waste systems. This stage is crucial because without proper collection, plastic can easily end up in waterways, harming marine life and ecosystems.
+
+[b]Sorting[/b]
+After collection, the plastic is sorted into different categories based on type and color. Sorting ensures that the recycled plastic is clean and consistent, which helps make better-quality products in the later stages.
+
+[b]Shredding[/b]
+Next, the sorted plastic is fed into shredding machines that cut it into small flakes or chips. These smaller pieces are easier to handle, transport, and process in the following stages of recycling.
+
+[b]Washing[/b]
+The shredded plastic then goes through a washing stage to remove dirt, labels, and leftover chemicals. Clean plastic creates stronger and more reliable recycled materials, reducing contamination in the final products.
+
+[b]Melting & Extruding[/b]
+Finally, the clean plastic flakes are melted down and pushed through an extruder to form pellets. These pellets are the base for creating new plastic goods like bottles, containers, and fibers — closing the recycling loop and giving waste a second life.
+
+[b]Why It Matters[/b]
+Recycling reduces the demand for new plastic, saves energy, and protects wildlife from pollution. Every recycled item makes a difference, helping to keep our planet clean and sustainable for the future. 
+"
+tab_size = 20
+
+[node name="How To play" type="RichTextLabel" parent="HelpMenu/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_6lkqf")
+bbcode_enabled = true
+text = "
+[b]How to Play[/b]
+Welcome to your Refactum! Your goal is to stop plastic from polluting the ocean by collecting, sorting, and recycling it into new materials. Every 	piece of plastic you recycle earns you gold, which can be used to upgrade your machines and improve your efficiency.
+
+[b]Collecting Plastic[/b]
+Plastic pieces will drift around the ocean, click on them to collect gold. Some plastics are rarer than others, and occasionally, golden plastic will appear. Golden plastic gives a huge bonus when collected, so be quick to grab it before it drifts away!
+
+[b]Recycling Machines[/b]
+You can invest your gold into different recycling machines such as the Collector, Shredder, Washer, Sorter, and Extruder. Each machine adds to your gold per second (GPS), representing your automated recycling system. Upgrading them increases your earnings and keeps the operation running even when you’re not clicking.
+
+[b]Upgrades[/b]
+The upgrade menu allows you to improve your machines’ speed, efficiency, and even the chances of finding golden plastic. These upgrades help your factory become faster and more profitable, simulating how real recycling plants evolve and improve over time.
+
+[b]Golden Plastic[/b]
+Golden plastic appears rarely, but it’s worth a lot more than normal plastic. Upgrading its spawn rate and value will help boost your income significantly. Keep an eye out — missing one could mean losing a big reward!
+
+[b]Goal of the Game[/b]
+Your mission is to clean the Ocean completely and prevent any plastic from hurting marine life. The more you recycle, the higher your earnings and environmental impact. Every upgrade and click brings you closer to a cleaner, sustainable world.
+"
+
+[node name="Back_But" type="Button" parent="HelpMenu"]
+z_index = 55
+layout_mode = 0
+offset_left = 1752.0
+offset_top = 286.0
+offset_right = 1814.0
+offset_bottom = 339.0
+theme_override_font_sizes/font_size = 30
+text = "X"
+
+[node name="ColorRect2" type="ColorRect" parent="HelpMenu"]
+z_index = 45
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(64.4537, 41.0293)
+mouse_filter = 2
+color = Color(0.137255, 0.137255, 0.137255, 0.678431)
+
+[connection signal="pressed" from="PauseMenu/Resume_But" to="." method="_on_resume_but_pressed"]

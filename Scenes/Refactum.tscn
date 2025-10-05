@@ -571,16 +571,16 @@ texture = ExtResource("22_ksxkw")
 region_enabled = true
 region_rect = Rect2(34.2277, 34.5785, 15.9358, 16.2392)
 
-[node name="Yellow" type="Sprite2D" parent="FloatPlastic"]
+[node name="GoldenPlastic" type="Sprite2D" parent="FloatPlastic"]
 position = Vector2(1259.07, 601)
-scale = Vector2(3.23, 3.23)
+scale = Vector2(6, 6)
 texture = ExtResource("23_c4op4")
 region_enabled = true
 region_rect = Rect2(41.334, 34.4669, 15.3698, 15.3697)
 
-[node name="Yellow2" type="Sprite2D" parent="FloatPlastic"]
-position = Vector2(1354.07, 619)
-scale = Vector2(3.23, 3.23)
+[node name="GoldenPlastic2" type="Sprite2D" parent="FloatPlastic"]
+position = Vector2(1283, 227)
+scale = Vector2(6, 6)
 texture = ExtResource("23_c4op4")
 region_enabled = true
 region_rect = Rect2(41.334, 34.4669, 15.3698, 15.3697)
@@ -593,7 +593,6 @@ region_rect = Rect2(41.334, 34.4669, 15.3698, 15.3697)
 visible = false
 
 [node name="Tasks" parent="UI" instance=ExtResource("24_ef580")]
-visible = false
 
 [node name="Upgrades" parent="UI" instance=ExtResource("25_3y3vt")]
 
